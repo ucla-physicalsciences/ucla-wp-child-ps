@@ -198,5 +198,9 @@ add_action( 'edit_user_profile_update', 'save_extra_profile_fields' );
 
 
 
-
+/*Add users role*/
+add_role('faculty_member','Faculty Member',get_role('author')->capabilities);
+add_role('graduate_student','Graduate Student',get_role('contributor')->capabilities);
+add_role('researcher_scholar','Researcher/Scholar',get_role('author')->capabilities);
+add_role('staff','Staff',get_role('contributor')->capabilities);
 
