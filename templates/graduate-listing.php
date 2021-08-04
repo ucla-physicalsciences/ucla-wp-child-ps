@@ -21,11 +21,19 @@ $args= array(
 $users=get_users($args);
 echo '<ul style="list-style:none;">';
 foreach ( $users as $user ) {
-?><hr> <?php  echo '<li>' . esc_html( $user->display_name ) . '  Email: ' . esc_html( $user->user_email ) . '</li>';
-}
+        ?><div class="col span_3_of_12"> <?php  echo '<li>'?>
+<article class="person-card">
+<img class="person-card__image" src= "get_avatar( $user->ID, 64 )" alt="Headshot of Faculty Member">
+<div class="person-card__info-wrapper">
+<h1 class="person-card__name"><span><?php  echo get_the_author_meta( 'display_name', $user ) ?></span></h1>
+<h2 class="person-card__department"><span><?php esc_html($user->user_role)?></span></h2>
+        <p class="person-card__description"><?php esc_html($user->description)?></p>
+    </div>
+</article>
+<?php '</li>';
+?></div><?php }
 echo '</ul>';
 ?>
-<hr>
 </div>
 </main>
 <?php get_footer();?>
