@@ -78,7 +78,7 @@ function deptdir_admin_media_scripts() {
 	<?php
 }
 //add_action( 'admin_print_footer_scripts-profile.php', 'deptdir_admin_media_scripts' );
-add_action( 'admin_print_footer_scripts-user-edit.php', 'deptdir_admin_media_scripts' );
+//add_action( 'admin_print_footer_scripts-user-edit.php', 'deptdir_admin_media_scripts' );
 
 // 3. Adding the Custom Image section for avatar.
 function custom_user_profile_fields( $profileuser ) {
@@ -110,8 +110,8 @@ function custom_user_profile_fields( $profileuser ) {
 	</table>
 	<?php
 }
-add_action( 'show_user_profile', 'custom_user_profile_fields', 10, 1 );
-add_action( 'edit_user_profile', 'custom_user_profile_fields', 10, 1 );
+//add_action( 'show_user_profile', 'custom_user_profile_fields', 10, 1 );
+//add_action( 'edit_user_profile', 'custom_user_profile_fields', 10, 1 );
 
 // 4. Saving the values.
 //add_action( 'personal_options_update', 'deptdir_save_local_avatar_fields' );
@@ -150,8 +150,74 @@ function deptdir_get_avatar_url( $url, $id_or_email, $args ) {
 	}
 }
 
+function extra_profile_fields($user){ ?>
+    
+    <h3><?php _e('Extra User Information'); ?></h3>
+<table class="form-table">
+        <tr>
+	    <th><label for="phone-number">Phone number</label></th>
+<td>
+            <input type="text" name="phone-number" id="phone-number" value="<?php echo esc_attr( get_the_author_meta( 'phone-number', $user->ID ) ); ?>" class="regular-text" /><br />
+            <span class="description">Enter your work phone number.</span>
+	    </td>
+ </tr>
+        <tr>
+	    <th><label for="office-location">Office location</label></th>
+	    <td>
+ <input type="text" name="office-location" id="office-location" value="<?php echo esc_attr( get_the_author_meta( 'office-location', $user->ID ) ); ?>" class="regular-text" /><br />
+            <span class="description">Enter your office building and number.</span>
+            </td>
+	</tr>
+<tr>
+            <th><label for="user_role">Position</label></th>
+            <td>
+ <input type="text" name="user_role" id="user_role" value="<?php echo esc_attr( get_the_author_meta( 'user_role', $user->ID ) ); ?>" class="regular-text" /><br />
+            <span class="description">Enter your position within the department.</span>
+            </td>
+        </tr>
 
+</table>
+<?php 
 
+}
+add_action( 'show_user_profile', 'extra_profile_fields', 10 );
+add_action( 'edit_user_profile', 'extra_profile_fields', 10 );
 
+function save_extra_profile_fields( $user_id ) {
 
+   
+    if ( !current_user_can( 'edit_user', $user_id ) )
+        return false; 
+    update_user_meta( $user_id, 'phone-number', $_POST['phone-number'] );
+    update_user_meta( $user_id, 'office-location', $_POST['office-location'] );
+    update_user_meta( $user_id, 'user-role', $_POST['user-role'] );
+    }
 
+add_action( 'personal_options_update', 'save_extra_profile_fields' );
+add_action( 'edit_user_profile_update', 'save_extra_profile_fields' );
+
+/*Add users role*/
+add_role('faculty_member','Faculty Member',get_role('author')->capabilities);
+add_role('graduate_student','Graduate Student',get_role('contributor')->capabilities);
+add_role('researcher_scholar','Researcher/Scholar',get_role('author')->capabilities);
+add_role('staff','Staff',get_role('contributor')->capabilities);
+add_role('faculty_emeritus','Faculty Emeritus',get_role('author')->capabilities);
+add_role('faculty_adjunct','Faculty Adjunct',get_role('author')->capabilities);
+/*author template*/
+function author_template($template){
+global $post;
+if ('author'===$post->post_type){
+        return plugin_dir_path(__FILE__).'author.php';
+}
+return $template;
+}
+add_filter('single_template','author_template');
+define( 'TEMP_DOMAIN', 'ucla-template-group-site');
+
+function my_styles() {
+
+    /* Enqueue The Styles */
+    wp_enqueue_style( 'style', plugins_url( 'style.css', __FILE__ ) );
+
+}
+add_action( 'wp_enqueue_scripts', 'my_styles' );
