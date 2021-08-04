@@ -6,7 +6,7 @@
 <div class = "ucla campus">
 <div class= "col span_12_of_12">
 <br>
-<h2 class="yellow-side-header">Faculty</h2>
+<h2 class="yellow-side-header">Researcher/Scholar</h2>
 </div>
 </div>
 </header>
