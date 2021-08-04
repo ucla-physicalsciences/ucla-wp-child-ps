@@ -347,14 +347,12 @@ float:left;}
 }
 
 /*title*/
-.general-title{ 
-  border-left: 10px solid #FFD100;
-  text-indent: 10px;
-  text-align: left;
-  background: white;
-  color: #333;
-  font-family: "Helvetica", "Arial", sans-serif;
-  font-size: 30px;
+.yellow-side-header{ 
+        border-left: 8px solid #FFD100;
+        padding: 0 0.5em;
+        font-family: 'Helvetica';
+        font-style: normal;
+        font-weight: 400;
 }
 
 /*link blue hoover yellow*/
