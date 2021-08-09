@@ -177,7 +177,8 @@ function extra_profile_fields($user){ ?>
         </tr>
 
 </table>
-<?php 
+
+<?php
 
 }
 add_action( 'show_user_profile', 'extra_profile_fields', 10 );
@@ -190,7 +191,7 @@ function save_extra_profile_fields( $user_id ) {
         return false; 
     update_user_meta( $user_id, 'phone-number', $_POST['phone-number'] );
     update_user_meta( $user_id, 'office-location', $_POST['office-location'] );
-    update_user_meta( $user_id, 'user-role', $_POST['user-role'] );
+    update_user_meta( $user_id, 'user_role', $_POST['user_role'] );
     }
 
 add_action( 'personal_options_update', 'save_extra_profile_fields' );
@@ -212,12 +213,8 @@ if ('author'===$post->post_type){
 return $template;
 }
 add_filter('single_template','author_template');
-define( 'TEMP_DOMAIN', 'ucla-template-group-site');
 
 function my_styles() {
-
-    /* Enqueue The Styles */
-    wp_enqueue_style( 'style', plugins_url( 'style.css', __FILE__ ) );
-
+    wp_enqueue_style( 'style', 'style.css' );
 }
 add_action( 'wp_enqueue_scripts', 'my_styles' );
