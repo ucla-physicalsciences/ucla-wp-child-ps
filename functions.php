@@ -226,3 +226,72 @@ function my_styles() {
     wp_enqueue_style( 'style', 'style.css' );
 }
 add_action( 'wp_enqueue_scripts', 'my_styles' );
+
+/*user taxonomy to handle reseach fields*/
+function register_research_fields_user_taxonomy(){
+	register_taxonomy(
+		'research_fields',
+		'user',
+		array(
+			'public'=>true,
+			'labels'=> array(
+				'name'=>__('Research Fields'),
+				'singular_name'=>__('Research Field'),
+				'menu_name'=>__('Research Fields'),
+				'search_items'=>__('Search Research Fields'),
+				'all_items'=>__('All Research Fields'),
+				'edit_items'=>__('Edit Research Field'),
+				'update_item'=>__('Update Research Field'),
+				'add_new_item'=>__('Add New Research Field'),
+				'new_item_name'=>__('New Research Field Name'),
+				'separate_items_with_commas'=>__('Separate Research Fields with commas'),
+				'add_or_remove_items'=>__('Add or remove Research Fields'),),
+				'rewrite'=>array(
+					'with_front'=>true,
+					'slug'=>'author/research_fields'),
+				'capabilities'=>array(
+					'manage_terms' => 'edit_users', 
+					'edit_terms'   => 'edit_users',
+					'delete_terms' => 'edit_users',
+					'assign_terms' => 'read'),
+				'update_count_callback'=>'my_update_research_fields_count'
+		)		);
+}
+/*updating the 'research fields' taxonomy count*/
+function my_update_research_fields_count($terms,$taxonomy){
+	global $wpdb;
+	foreach ( (array) $terms as $term ) {
+	$count= $wpdb->get_var($wpdb->prepare( "SELECT COUNT(*) FROM $wpdb->term_relationships WHERE term_taxonomy_id = %d", $term ) );
+	do_action( 'edit_term_taxonomy', $term, $taxonomy );
+		$wpdb->update( $wpdb->term_taxonomy, compact( 'count' ), array( 'term_taxonomy_id' => $term ) );
+		do_action( 'edited_term_taxonomy', $term, $taxonomy );
+	}
+}
+/*add the research fields taxonomy page in the admin*/
+add_action('admin_menu','add_research_fields_admin_page');
+/*creating the manage terms page for research fields taxonomy*/
+function add_research_fields_admin_page(){
+	$tax=get_taxonomy('research_field');
+	add_users_page(
+		esc_attr( $tax->labels->menu_name ),
+		esc_attr( $tax->labels->menu_name ),
+		$tax->cap->manage_terms,
+		'edit-tags.php?taxonomy=' . $tax->name
+	);
+}
+add_filter('manage_edit-research_fields_columns','manage_research_fields_user_column' );
+function manage_research_fields_user_column($columns){
+	unset( $columns['posts'] );
+
+	$columns['users'] = __( 'Users' );
+
+	return $columns;
+}
+
+add_action('manage_research_fields_custom_column','manage_research_fields_column',10,3);
+function manage_research_fields_column($display,$column,$term_id){
+	if ('users'===$column){
+		$term=get_term($term_id,'research_field');
+		echo $term->count;
+	}
+}
