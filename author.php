@@ -38,6 +38,12 @@
 <br><br>
 <div class="ucla campus">
 <div class=" col span_8_of_12">
+<h2 class="yellow-side-header">Research Field</h2>
+<br><br>
+<p><?php 
+			if (get_the_author_meta('user_fields',$author_id,true)):
+				echo get_the_author_meta('user_fields',$author_id);
+			else:?> No Field of Research.<?php  endif;?></p><br><br><br>
 <h2 class="yellow-side-header">Awards</h2>
 <br><br>
 <?php  $args = array(
