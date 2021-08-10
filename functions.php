@@ -175,6 +175,13 @@ function extra_profile_fields($user){ ?>
             <span class="description">Enter your position within the department.</span>
             </td>
         </tr>
+<tr>
+            <th><label for="user_fields">Research Field</label></th>
+            <td>
+ <input type="text" name="user_fields" id="user_fields" value="<?php echo esc_attr( get_the_author_meta( 'user_role', $user->ID ) ); ?>" class="regular-text" /><br />
+            <span class="description">Enter your fields of research</span>
+            </td>
+        </tr>
 
 </table>
 
@@ -192,6 +199,7 @@ function save_extra_profile_fields( $user_id ) {
     update_user_meta( $user_id, 'phone-number', $_POST['phone-number'] );
     update_user_meta( $user_id, 'office-location', $_POST['office-location'] );
     update_user_meta( $user_id, 'user_role', $_POST['user_role'] );
+    update_user_meta( $user_id, 'user_fields', $_POST['user_fields'] );
     }
 
 add_action( 'personal_options_update', 'save_extra_profile_fields' );
