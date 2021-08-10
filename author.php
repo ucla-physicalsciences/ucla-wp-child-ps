@@ -13,20 +13,20 @@
 <hr/>
 
      <div class="ucla campus">
-<?php $user = wp_get_current_user();?>
+<?php $user_data = get_userdata($author_id);?>
       <section class= "story">
 <div class= "story__featured">
 <article class="story__featured-card">
 <a href="#" tabindex="-1">
-<img class="story__featured-image" src="<?php echo esc_url( get_avatar_url( $user->ID ) );?>"  alt "Group Member photo">
+<img class="story__featured-image" src="<?php echo esc_url( get_avatar_url( $author_id ) );?>"  alt "Group Member photo">
 </a>
       <div class="story__featured-content">
-      <h3 class="story__featured-title"><?php echo esc_html($user->display_name)?></h3>
-      <p class="story__featured-blurb"> <?php echo esc_html($user->description)?></p>
+      <h3 class="story__featured-title"><?php echo get_the_author_meta('display_name',$author_id);?></h3>
+      <p class="story__featured-blurb"> <?php echo get_the_author_meta('description',$author_id);?></p>
         <button class="btn btn--lightbg"><?php
         global $wp_roles;
-        if (!empty($user->roles)){
-                foreach ($user->roles as $role){
+        if (!empty($user_data->roles)){
+                foreach ($user_data->roles as $role){
                 echo $wp_roles->roles[ $role ]['name'] . ' ';}
 
                 };?></button>
@@ -48,7 +48,24 @@
 	$custom_posts_award = new WP_Query($args);
 	if ($custom_posts_award->have_posts()):
 		while($custom_posts_award->have_posts()):$custom_posts_award->the_post();
-	?>test<?php
+	?>
+<p>
+<?php
+//name
+if(get_post_meta($post->ID,'name',true)):
+	echo get_post_meta($post->ID,'name',true);?>, 
+<?php endif;?>
+<?php
+//date
+if(get_post_meta($post->ID,'date',true)):
+        echo get_post_meta($post->ID,'date',true); 
+endif;?>
+<?php
+//location
+if(get_post_meta($post->ID,'location',true)):?> (<?php
+	echo get_post_meta($post->ID,'location',true);?>   )  
+<?php endif;?></p><hr>
+<?php
 endwhile;
 else:?> No Awards.<?php
 endif;?>
@@ -115,7 +132,7 @@ endif;?>
 <br>  <br>
 
 </div>
-<div class="col span_3_of_12">
+<div class="col span_2_of_12">
 <h2 class="yellow-side-header">Contact Informations</h2>
 <br><br>
 <p><b>Email: </b><?php echo get_the_author_meta('email',$author_id);?>
