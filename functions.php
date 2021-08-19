@@ -212,6 +212,8 @@ add_role('researcher_scholar','Researcher/Scholar',get_role('author')->capabilit
 add_role('staff','Staff',get_role('contributor')->capabilities);
 add_role('faculty_emeritus','Faculty Emeritus',get_role('author')->capabilities);
 add_role('faculty_adjunct','Faculty Adjunct',get_role('author')->capabilities);
+add_role('faculty_chair','Faculty Chair',get_role('author')->capabilities);
+add_role('faculty_vice_chair','Faculty Vice Chair',get_role('author')->capabilities);
 /*author template*/
 function author_template($template){
 global $post;
@@ -228,9 +230,9 @@ function my_styles() {
 add_action( 'wp_enqueue_scripts', 'my_styles' );
 
 /*user taxonomy to handle reseach fields*/
-function register_research_fields_user_taxonomy(){
+function register_research_field_user_taxonomy(){
 	register_taxonomy(
-		'research_fields',
+		'research_field',
 		'user',
 		array(
 			'public'=>true,
@@ -248,17 +250,17 @@ function register_research_fields_user_taxonomy(){
 				'add_or_remove_items'=>__('Add or remove Research Fields'),),
 				'rewrite'=>array(
 					'with_front'=>true,
-					'slug'=>'author/research_fields'),
+					'slug'=>'author/research_field'),
 				'capabilities'=>array(
 					'manage_terms' => 'edit_users', 
 					'edit_terms'   => 'edit_users',
 					'delete_terms' => 'edit_users',
 					'assign_terms' => 'read'),
-				'update_count_callback'=>'my_update_research_fields_count'
+				'update_count_callback'=>'my_update_research_field_count'
 		)		);
 }
-/*updating the 'research fields' taxonomy count*/
-function my_update_research_fields_count($terms,$taxonomy){
+/*updating the 'research field' taxonomy count*/
+function my_update_research_field_count($terms,$taxonomy){
 	global $wpdb;
 	foreach ( (array) $terms as $term ) {
 	$count= $wpdb->get_var($wpdb->prepare( "SELECT COUNT(*) FROM $wpdb->term_relationships WHERE term_taxonomy_id = %d", $term ) );
@@ -268,9 +270,9 @@ function my_update_research_fields_count($terms,$taxonomy){
 	}
 }
 /*add the research fields taxonomy page in the admin*/
-add_action('admin_menu','add_research_fields_admin_page');
+add_action('admin_menu','add_research_field_admin_page');
 /*creating the manage terms page for research fields taxonomy*/
-function add_research_fields_admin_page(){
+function add_research_field_admin_page(){
 	$tax=get_taxonomy('research_field');
 	add_users_page(
 		esc_attr( $tax->labels->menu_name ),
@@ -279,8 +281,8 @@ function add_research_fields_admin_page(){
 		'edit-tags.php?taxonomy=' . $tax->name
 	);
 }
-add_filter('manage_edit-research_fields_columns','manage_research_fields_user_column' );
-function manage_research_fields_user_column($columns){
+add_filter('manage_edit-research_field_columns','manage_research_field_user_column' );
+function manage_research_field_user_column($columns){
 	unset( $columns['posts'] );
 
 	$columns['users'] = __( 'Users' );
@@ -288,8 +290,8 @@ function manage_research_fields_user_column($columns){
 	return $columns;
 }
 
-add_action('manage_research_fields_custom_column','manage_research_fields_column',10,3);
-function manage_research_fields_column($display,$column,$term_id){
+add_action('manage_research_field_custom_column','manage_research_field_column',10,3);
+function manage_research_field_column($display,$column,$term_id){
 	if ('users'===$column){
 		$term=get_term($term_id,'research_field');
 		echo $term->count;
