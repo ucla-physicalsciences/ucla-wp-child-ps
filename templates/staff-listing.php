@@ -10,7 +10,15 @@
 </div>
 </div>
 </header>
+<br><br>
 <div class = "ucla campus">
+<!--Staff General-->
+<div class="accordion accordion--card-content accordion--mobile-only">
+<dl>
+<button class="accordion__title" aria-expanded="false">
+<dt>Staff</dt>
+</button>
+<dd class="accordion__content">
 <?php
 
 $args= array(
@@ -22,7 +30,7 @@ $users=get_users($args);
 echo '<ul style="list-style:none;">';
 foreach ( $users as $user ) {
         wp_get_current_user();
-        ?><div class="col span_3_of_12"> <?php  echo '<li>'?>
+?><div class="col span_5_of_12"> <?php  echo '<li>'?>
 <article class="person-card">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
@@ -42,6 +50,10 @@ foreach ( $users as $user ) {
 ?></div><?php }
 echo '</ul>';
 ?>
+</dd>
+</dl>
+</div>
+<!--End Faculty Emeritus-->
 </div>
 </main>
 <?php get_footer();?>
