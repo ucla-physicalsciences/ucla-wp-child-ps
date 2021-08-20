@@ -6,6 +6,29 @@ function ucla_theme_enqueue_styles() {
         array( 'ucla-style' ),
         wp_get_theme()->get('Version') // this only works if you have Version in the style header
     );
+    // CDN jQuery from Google
+//    wp_enqueue_script( 'jq', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js');
+    // Install the UCLA Component library styles
+//    wp_enqueue_style( 'lib-style', 'https://cdn.webcomponents.ucla.edu/1.0.0-beta.15/css/ucla-lib.min.css' );
+    // Install the UCLA Component Library  scripts
+//    wp_enqueue_script( 'lib-script', 'https://webcomponents.ucla.edu/public/1.0.0-beta.15/js/ucla-lib-scripts.min.js' );
+    // Install the WordPress Theme Styles
+//    wp_enqueue_style( 'ucla-style', '/wp-content/themes/ucla-wp/dist/css/global.css' );
+    // Install the WordPress Theme Scripts
+//    wp_enqueue_script( 'ucla-script', '/wp-content/themes/ucla-wp/dist/js/scripts.js' );
+    // Install UCLA App css
+//    wp_enqueue_style( 'ucla-app', 'http://ec2-44-225-97-246.us-west-2.compute.amazonaws.com/css/app.css' );
+    // Install fancybox
+//    wp_enqueue_style( 'fancybox-css', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.css' );
+//    wp_enqueue_script( 'fancybox-js', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.js' );
+    // Install hideseek
+//    wp_enqueue_script( 'hideseek', '/wp-content/themes/ucla-wp-child/js/jquery.hideseek.min.js' );
+    // Install stupidtable
+//    wp_enqueue_script( 'stupidtable', '/wp-content/themes/ucla-wp-child/js/stupidtable.min.js' );
+    // Install scrollTo
+//    wp_enqueue_script( 'scrollTo', '/wp-content/themes/ucla-wp-child/js/jquery.scrollTo.min.js' );
+    // Install main from gateway
+//    wp_enqueue_script( 'gateway-main', '/wp-content/themes/ucla-wp-child/js/main.js' );
 }
 
 add_action( 'after_setup_theme', 'remove_parent_widget_init' );
