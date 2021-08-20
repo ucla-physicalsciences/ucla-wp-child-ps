@@ -8,7 +8,7 @@
 <br>
 <h2 class="yellow-side-header">Faculty</h2><br><br>
 <p class="lead"> Introductory description of the Faculty </p>
-<p>Below you'll find a listing of the Faculty Member categorized by their positions</p>
+<p>Below you'll find a listing of the Faculty Member categorized by their position</p>
 </div>
 </div>
 </header>
