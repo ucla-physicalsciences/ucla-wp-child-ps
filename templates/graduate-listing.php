@@ -6,11 +6,12 @@
 <div class = "ucla campus">
 <div class= "col span_12_of_12">
 <br>
-<h2 class="yellow-side-header">Graduate Students</h2>
+<h2 class="yellow-side-header">Graduate Students</h2><br><br>
+<p class="lead"> Introductory description of the Graduate Students </p>
+<p>Below you'll find a listing of the Graduate Student Members categorized by degree pursued</p>
 </div>
 </div>
 </header>
-<br><br>
 <div class = "ucla campus">
 <!--Graduate General-->
 <div class="accordion accordion--card-content accordion--mobile-only">

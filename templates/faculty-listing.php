@@ -6,11 +6,12 @@
 <div class = "ucla campus">
 <div class= "col span_12_of_12">
 <br>
-<h2 class="yellow-side-header">Faculty</h2>
+<h2 class="yellow-side-header">Faculty</h2><br><br>
+<p class="lead"> Introductory description of the Faculty </p>
+<p>Below you'll find a listing of the Faculty Member categorized by their positions</p>
 </div>
 </div>
 </header>
-<br>  <br>
 <div class = "ucla campus">
 
 <!--General Faculty-->

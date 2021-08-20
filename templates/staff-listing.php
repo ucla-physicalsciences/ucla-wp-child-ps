@@ -6,11 +6,12 @@
 <div class = "ucla campus">
 <div class= "col span_12_of_12">
 <br>
-<h2 class="yellow-side-header">Staff</h2>
+<h2 class="yellow-side-header">Staff</h2><br><br>
+<p class="lead"> Introductory description of the Staff </p>
+<p>Below you'll find a listing of the Staff Member categorized by area of expertise</p>
 </div>
 </div>
 </header>
-<br><br>
 <div class = "ucla campus">
 <!--Staff General-->
 <div class="accordion accordion--card-content accordion--mobile-only">
