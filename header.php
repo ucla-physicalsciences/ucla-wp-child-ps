@@ -24,7 +24,9 @@
       </div>
 
       <div class="site-name">
+       <div class="site-name__wrap">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
+       </div>
       </div>
 
       <div class="nav-wrap">
