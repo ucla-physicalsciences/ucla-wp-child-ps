@@ -15,7 +15,7 @@ Second ligne: Employment; IT Documentation and Help; Research Vessel Zodiac
 Third ligne: Fiveday Forecast: Weather Tour; Current Forecast-->
 <h3 class="pt-24 pb-12"></h3>
 <div class="ucla campus">
-  <section class="tile__section tile__section--col-3">
+  <section class="tile__section tile__section--col-4">
     <span class="tile tile__background">
       <a class="tile__link" href="http://aos.ucla.edu/climate-statement/">
         <h3 class="tile__title">Climate Statement</h3>
