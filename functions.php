@@ -100,8 +100,8 @@ function deptdir_admin_media_scripts() {
 	</script>
 	<?php
 }
-//add_action( 'admin_print_footer_scripts-profile.php', 'deptdir_admin_media_scripts' );
-//add_action( 'admin_print_footer_scripts-user-edit.php', 'deptdir_admin_media_scripts' );
+add_action( 'admin_print_footer_scripts-profile.php', 'deptdir_admin_media_scripts' );
+add_action( 'admin_print_footer_scripts-user-edit.php', 'deptdir_admin_media_scripts' );
 
 // 3. Adding the Custom Image section for avatar.
 function custom_user_profile_fields( $profileuser ) {
@@ -133,11 +133,11 @@ function custom_user_profile_fields( $profileuser ) {
 	</table>
 	<?php
 }
-//add_action( 'show_user_profile', 'custom_user_profile_fields', 10, 1 );
-//add_action( 'edit_user_profile', 'custom_user_profile_fields', 10, 1 );
+add_action( 'show_user_profile', 'custom_user_profile_fields', 10, 1 );
+add_action( 'edit_user_profile', 'custom_user_profile_fields', 10, 1 );
 
 // 4. Saving the values.
-//add_action( 'personal_options_update', 'deptdir_save_local_avatar_fields' );
+add_action( 'personal_options_update', 'deptdir_save_local_avatar_fields' );
 add_action( 'edit_user_profile_update', 'deptdir_save_local_avatar_fields' );
 function deptdir_save_local_avatar_fields( $user_id ) {
 	if ( current_user_can( 'edit_user', $user_id ) ) {
@@ -327,3 +327,10 @@ function manage_research_field_column($display,$column,$term_id){
 		echo $term->count;
 	}
 }
+
+
+function my_datepicker_enqueue() {
+            wp_enqueue_script( 'jquery-ui-datepicker' ); // enqueue datepicker from WP
+            wp_enqueue_style( 'jquery-ui-style', '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css', true);
+}
+add_action( 'admin_enqueue_scripts', 'my_datepicker_enqueue' );

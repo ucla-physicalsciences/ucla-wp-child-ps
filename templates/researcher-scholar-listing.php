@@ -36,7 +36,7 @@ foreach ( $users as $user ) {
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
 <div class="person-card__info-wrapper">
-<h1 class="person-card__name"><span><?php echo esc_html($user->display_name);?></span></h1>
+<h1 class="person-card__name"><a href="<?php echo get_author_posts_url($user->ID);?>"><span><?php echo esc_html($user->display_name);?></span></a></h1>
 <h2 class="person-card__department"><span><?php
         global $wp_roles;
         if (!empty($user->roles)){

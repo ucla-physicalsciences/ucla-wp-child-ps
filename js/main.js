@@ -1514,3 +1514,10 @@ module.exports = __webpack_require__(/*! /opt/atlassian/pipelines/agent/build/ww
 
 /******/ });
 //# sourceMappingURL=main.js.map
+
+jQuery(document).ready(function($){
+    $('.my-custom-datepicker-field').datepicker({
+        dateFormat: 'dd-mm-yy', //maybe you want something like this
+        showButtonPanel: true
+    });
+});
