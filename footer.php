@@ -1,13 +1,4 @@
-<style>
-a:link{
-color: white;
-text-decoration: underline;
-}
 
-a:hover {
-  color: #FFD100;
-}
-</style>
       </div>
 <section id="social-blade" class="social-post" aria-labelledby="socialHomepageHeading">
 <div class="social-post-container">
@@ -61,22 +52,22 @@ Los Angeles, CA 90095-1565
     <div class="col span_1_of_3">
 	<h2 style="color:white; font-weight: 100; font-size: 28px">Contact information</h2>
 <p style="color:white;  font-weight: 100;">
-Students Services Office: <a  href="tel:3108251954">(310) 825-1954</a><br>
-Email: <a  href ="mailto:studentinfo@atmos.ucla.edu">studentinfo@atmos.ucla.edu</a><br>
-Phone: <a  href="tel:3108251217">(310) 825-1217</a>
+Students Services Office: <a  style="color:white; text-decoration:underline;"  href="tel:3108251954">(310) 825-1954</a><br>
+Email: <a style="color:white; text-decoration:underline;" href ="mailto:studentinfo@atmos.ucla.edu">studentinfo@atmos.ucla.edu</a><br>
+Phone: <a style="color:white; text-decoration:underline;" href="tel:3108251217">(310) 825-1217</a>
 </p>
     </div>  </div>
 <hr> 
 <p style="color:white; font-weight:100;"> &copy;<?php echo date("Y"); ?> Regents of the University of California</p>
 <div class = "ucla campus"> 
 <div class="col span_1_of_4">
-<a style="color:white;" href="https://www.bso.ucla.edu/">Emergency</a>
+<a style="color:white; text-decoration:underline;" href="https://www.bso.ucla.edu/">Emergency</a>
 </div>
 <div class="col span_1_of_3">
-<a href="http://www.ucla.edu/accessibility">Accessibility</a>
+<a style="color:white; text-decoration:underline;" href="http://www.ucla.edu/accessibility">Accessibility</a>
 </div>
 <div class="col span_1_of_3">
-<a href="http://www.ucla.edu/terms-of-use/">Privacy &amp; Terms of Use</a>
+<a style="color:white; text-decoration:underline;"href="http://www.ucla.edu/terms-of-use/">Privacy &amp; Terms of Use</a>
 </div>
 </div>
 
