@@ -1,20 +1,5 @@
 
       </div>
-<section id="social-blade" class="social-post" aria-labelledby="socialHomepageHeading">
-<div class="social-post-container">
-<div class="social-post__wrapper ucla campus">
-<div class="social-links-container--blue">
-  <a href="https://www.facebook.com/UCLA/"><svg class="social-icon--facebook"></svg></a>
-  <a href="https://twitter.com/ucla"><svg class="social-icon--twitter"></svg></a>
-  <a href="https://www.instagram.com/ucla/"><svg class="social-icon--instagram"></svg></a>
-  <a href="https://www.snapchat.com/add/uclaofficial"><svg class="social-icon--snapchat"></svg></a>
-  <a href="https://www.linkedin.com/company/ucla"><svg class="social-icon--linkedin"></svg></a>
-  <a href="https://www.youtube.com/user/UCLA"><svg class="social-icon--youtube"></svg></a>
-  <a href="https://www.tiktok.com/@ucla"><svg class="social-icon--tiktok"></svg></a>
-</div>
-</div>
-</div></section>
-<br><br>
       <?php
          $foot_signature = get_option('logo');
       ?>
@@ -22,11 +7,11 @@
       <footer id="footer" role="contentinfo" class="foot container">
 
         <div class="foot-upper">
-          <div class="foot-upper-wrap">
+	  <div class="foot-upper-wrap">
             <div class="foot-upper_address">
-
               <img src="http://aos.ucla.edu/wp-content/uploads/2020/12/Uxd_Wht_AtmosphericOceanicSci_A.png" alt="Footer Logo" />
-            </div>
+	   
+</div> 
 <!--?php echo FrmFormsController::get_form_shortcode( array( 'id' => 2, 'title' => false, 'description' => false ) ); ?>
     -->
 <h2 style="color:white; font-weight: 100; font-size: 32px">General Information</h2> 

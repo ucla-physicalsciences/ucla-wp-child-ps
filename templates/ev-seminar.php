@@ -27,7 +27,7 @@ $args = array (
         <?php while ( $the_query->have_posts() ) : $the_query->the_post();
     $thumbnail_other = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );?>
     <article class="story__secondary-card">
-    <a href=""<?php the_permalink(); ?>"">
+    <a href="<?php echo the_permalink(); ?>">
     <div class="story__secondary-image-wrapper"><img class="story__secondary-image" src="<?php echo $thumbnail_other[0]?>" /></div>
         <h1 class="story__secondary-title">
         <span class="story__secondary-title-text"><?php echo the_title();?></span>
