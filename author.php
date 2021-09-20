@@ -25,7 +25,7 @@ float:right;
 <div class= "story__featured">
 <article class="story__featured-card"  >
 <a href="#" tabindex="-1">
-<div class="story__featured-image"  alt "Group Member photo"><div  class="right-side" ><?php echo get_avatar( $author_id,400 ) ;?></div></div>
+<div class="story__featured-image"  alt "Group Member photo"><div  class="right-side" ><?php echo get_avatar( $author_id,600 ) ;?></div></div>
 </a>
       <div class="story__featured-content">
       <h3 class="story__featured-title"><?php echo get_the_author_meta('display_name',$author_id);?></h3>
@@ -42,7 +42,7 @@ float:right;
   </div> 
 
 </div>
-<br><br>
+<br><br><br><br><br><br>
 <div class="ucla campus">
 <div class=" col span_8_of_12">
 <h2 class="yellow-side-header">Research Field</h2>
