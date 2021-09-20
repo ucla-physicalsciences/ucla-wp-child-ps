@@ -1,4 +1,11 @@
 <?php get_header(); ?>
+<style>
+@media only screen and (min-width: 1024px){
+.right-side{
+float:right;
+}
+
+</style>
 
 <main id="main">
  <header class="header">
@@ -16,9 +23,9 @@
 <?php $user_data = get_userdata($author_id);?>
       <section class= "story">
 <div class= "story__featured">
-<article class="story__featured-card">
+<article class="story__featured-card"  >
 <a href="#" tabindex="-1">
-<img class="story__featured-image" src="<?php echo esc_url( get_avatar_url( $author_id ) );?>"  alt "Group Member photo">
+<div class="story__featured-image"  alt "Group Member photo"><div  class="right-side" ><?php echo get_avatar( $author_id,400 ) ;?></div></div>
 </a>
       <div class="story__featured-content">
       <h3 class="story__featured-title"><?php echo get_the_author_meta('display_name',$author_id);?></h3>

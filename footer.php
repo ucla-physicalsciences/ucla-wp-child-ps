@@ -1,5 +1,4 @@
-
-      </div>
+    </div>
       <?php
          $foot_signature = get_option('logo');
       ?>
@@ -42,7 +41,16 @@ Email: <a style="color:white; text-decoration:underline;" href ="mailto:studenti
 Phone: <a style="color:white; text-decoration:underline;" href="tel:3108251217">(310) 825-1217</a>
 </p>
     </div>  </div>
-<hr> 
+<div class="social-links-container--blue">
+  <a class="social-icon"href="https://www.facebook.com/UCLA/"><span class="social-icon--facebook"></span><span class="visuallyhidden">Facebook</span></a>
+  <a href="https://twitter.com/xepatucla"><span class="social-icon--twitter"></span><span class="visuallyhidden">Twitter</span></a>
+  <a href="https://www.instagram.com/uclaaos/"><span class="social-icon--instagram"></span><span class="visuallyhidden">Instagram</span></a>
+  <a href="https://www.snapchat.com/add/uclaofficial"><span class="social-icon--snapchat"></span><span class="visuallyhidden">Snapchat</span></a>
+  <a href="https://www.linkedin.com/company/ucla"><span class="social-icon--linkedin"></span><span class="visuallyhidden">Linked</span></a>
+  <a href="https://www.youtube.com/channel/UCm3qkHGVACxWYjk0e2ABpKw"><span class="social-icon--youtube"></span><span class="visuallyhidden">Youtube</span></a>
+  <a href="https://www.tiktok.com/@ucla"><span class="social-icon--tiktok"></span><span class="visuallyhidden">Tiktok</span></a>
+</div>
+<hr>
 <p style="color:white; font-weight:100;"> &copy;<?php echo date("Y"); ?> Regents of the University of California</p>
 <div class = "ucla campus"> 
 <div class="col span_1_of_4">
