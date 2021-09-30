@@ -205,25 +205,31 @@ function extra_profile_fields($user){ ?>
             <span class="description">Enter your fields of research</span>
             </td>
         </tr>
-
-</table>
-
+   <tr><th>
 <?php
-
+	wp_nonce_field('email_display','email_display_nonce');
+$value = get_the_author_meta('display_email_checkbox', $user->ID);
+$is_checked=($value==1)?'checked':'';
+?>
+	<input type="checkbox" id="display_email_checkbox"  name="display_email_checkbox" <?php echo $is_checked; ?> />
+<label for"display_email_checkbox">Show email on my Profile</label>
+	</th></tr>
+<?php
 }
 add_action( 'show_user_profile', 'extra_profile_fields', 10 );
 add_action( 'edit_user_profile', 'extra_profile_fields', 10 );
 
-function save_extra_profile_fields( $user_id ) {
-
-   
+function save_extra_profile_fields( $user_id ) { 
     if ( !current_user_can( 'edit_user', $user_id ) )
         return false; 
     update_user_meta( $user_id, 'phone-number', $_POST['phone-number'] );
     update_user_meta( $user_id, 'office-location', $_POST['office-location'] );
     update_user_meta( $user_id, 'user_role', $_POST['user_role'] );
     update_user_meta( $user_id, 'user_fields', $_POST['user_fields'] );
-    }
+    $visible= isset($_POST['display_email_checkbox']);
+    $visible = (int)$visible;
+    update_user_meta( $user_id,'display_email_checkbox',$visible);  
+}
 
 add_action( 'personal_options_update', 'save_extra_profile_fields' );
 add_action( 'edit_user_profile_update', 'save_extra_profile_fields' );
@@ -331,6 +337,6 @@ function manage_research_field_column($display,$column,$term_id){
 
 function my_datepicker_enqueue() {
             wp_enqueue_script( 'jquery-ui-datepicker' ); // enqueue datepicker from WP
-            wp_enqueue_style( 'jquery-ui-style', '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css', true);
+            wp_enqueue_style( 'jquery-ui-style', '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css');
 }
 add_action( 'admin_enqueue_scripts', 'my_datepicker_enqueue' );

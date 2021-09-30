@@ -20,6 +20,11 @@ Second ligne: Oceanography; Space Physics-->
         <h3 class="tile__title">AOS Research Overview</h3>
       </a>
     </span>
+    <span class="tile tile__background ">
+      <a class="tile__link" href="http://aos.ucla.edu/biogeochemistry/">
+        <h3 class="tile__title">Biogeochemistry</h3>
+      </a>
+    </span>
     <span class="tile tile__background">
       <a class="tile__link" href="http://aos.ucla.edu/chemistry-radiation/">
         <h3 class="tile__title">Chemistry & Radiation</h3>
@@ -27,7 +32,7 @@ Second ligne: Oceanography; Space Physics-->
     </span>
     <span class="tile tile__background ">
       <a class="tile__link" href="http://aos.ucla.edu/climate-weather/">
-        <h3 class="tile__title">Climate & Weather</h3>
+        <h3 class="tile__title">Dynamics and Climate</h3>
       </a>
     </span>
     <span class="tile tile__background">
