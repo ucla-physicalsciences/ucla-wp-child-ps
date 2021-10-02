@@ -91,8 +91,8 @@ function deptdir_admin_media_scripts() {
 				});
 				file_frame.on('select', function() {
 					var attachment = file_frame.state().get('selection').first().toJSON();
-					$button.siblings('#deptdir-custom-avatar').val( attachment.sizes.thumbnail.url );
-					$button.siblings('.custom-avatar-preview').attr( 'src', attachment.sizes.thumbnail.url );
+					$button.siblings('#deptdir-custom-avatar').val( attachment.sizes.large.url );
+					$button.siblings('.custom-avatar-preview').attr( 'src', attachment.sizes.large.url );
 				});
 				file_frame.open();
 			});
