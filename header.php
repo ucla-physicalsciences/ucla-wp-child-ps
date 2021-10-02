@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <style>
-@media (min-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   #header .site-name__wrap {
     max-width: 260px;
   }
 }
 
-@media (min-width: 1115px) {
+@media only screen and (min-width: 1115px) {
 #header .site-name__wrap {
   max-width: 400px;
 }
 }
-@media (min-width: 1300px) {
+@media only screen and (min-width: 1300px) {
   #header .site-name__wrap {
     max-width: 500px;
   }
@@ -43,14 +43,14 @@
        	  <a href="http://ucla.edu"><img class="header-logo__image" src="/wp-content/themes/ucla-wp/images/ucla_logo_white.svg" alt="UCLA Logo" /></a>
         </div>
       </div>
-<div  class="ucla campus">
+<div  class="ucla campus"> 
       <div class="site-name">
        <div class="site-name__wrap">
         <a  href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
        </div>
       </div>
 
-</div>
+ </div> 
 
       <div class="nav-wrap">
         <button id="primary-ham" class="hamburger hamburger--squeeze" type="button" aria-label="Menu" aria-controls="navigation" alt="navigation and search">
