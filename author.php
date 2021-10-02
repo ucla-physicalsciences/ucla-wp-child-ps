@@ -155,8 +155,10 @@ endif;?>
 <div class="col span_2_of_12">
 <h2 class="yellow-side-header">Contact Informations</h2>
 <br><br>
+<?php $check = get_the_author_meta('display_email_checkbox',$author_id);
+if ($check) {?>
 <p><b>Email: </b><?php echo get_the_author_meta('email',$author_id);?>
-<br><br>
+<br><br><?php }?>
 <b>Website: </b>
 <?php echo get_the_author_meta('user_url', $author_id);?>
 <br><br>
