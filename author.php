@@ -58,8 +58,7 @@ wp_tag_cloud(
 		'separator'=>'<br><br>',
 		'include'=>$field_list
 	));?></p>
-<h2 class="yellow-side-header">Awards</h2>
-<br><br>
+
 <?php  $args = array(
 	'post_type'=>'award',
 	'author'=>get_queried_object_id(),
@@ -67,6 +66,8 @@ wp_tag_cloud(
 );
 	$custom_posts_award = new WP_Query($args);
 	if ($custom_posts_award->have_posts()):
+?>	<h2 class="yellow-side-header">Awards</h2>
+<br><br><?php
 		while($custom_posts_award->have_posts()):$custom_posts_award->the_post();
 	?>
 <p>
@@ -87,18 +88,17 @@ if(get_post_meta($post->ID,'location',true)):?> (<?php
 <?php endif;?></p><hr>
 <?php
 endwhile;
-else:?> No Awards.<?php
 endif;?>
 <br><br><br>
-<h2 class="yellow-side-header">Publications</h2>
-<br><br>
 <?php  $args = array(
         'post_type'=>'publication',
         'author'=>get_queried_object_id(),
         'showposts'=>10
 );
         $custom_posts_publication = new WP_Query($args);
-        if ($custom_posts_publication->have_posts()):
+if ($custom_posts_publication->have_posts()):
+?>	<h2 class="yellow-side-header">Publications</h2>
+<br><br><?php
                 while($custom_posts_publication->have_posts()):$custom_posts_publication->the_post();
        
 //article
@@ -147,7 +147,6 @@ endif;?>
 
 </p><?php endif;?><hr><?php
 endwhile;
-else:?> No Publication.<?php
 endif;?>
 <br>  <br>
 
