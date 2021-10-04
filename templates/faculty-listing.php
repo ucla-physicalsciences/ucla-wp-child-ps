@@ -102,7 +102,7 @@ echo '</ul>';
 <div class="accordion accordion--card-content accordion--mobile-only">
 <dl>
 <button class="accordion__title" aria-expanded="false">
-<dt>Faculty General</dt>
+<dt>Faculty</dt>
 </button>
 <dd class="accordion__content">
 <?php

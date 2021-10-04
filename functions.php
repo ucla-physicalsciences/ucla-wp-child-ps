@@ -235,6 +235,7 @@ add_action( 'personal_options_update', 'save_extra_profile_fields' );
 add_action( 'edit_user_profile_update', 'save_extra_profile_fields' );
 
 /*Add users role*/
+add_role('faculty_general','Faculty',get_role('author')->capabilities);
 add_role('graduate_student','Graduate Student',get_role('contributor')->capabilities);
 add_role('staff','Staff',get_role('contributor')->capabilities);
 add_role('graduate_xep','Graduate Student XEP',get_role('contributor')->capabilities);
