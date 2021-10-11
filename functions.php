@@ -198,13 +198,6 @@ function extra_profile_fields($user){ ?>
             <span class="description">Enter your position within the department.</span>
             </td>
         </tr>
-<tr>
-            <th><label for="user_fields">Research Field</label></th>
-            <td>
- <input type="text" name="user_fields" id="user_fields" value="<?php echo esc_attr( get_the_author_meta( 'user_role', $user->ID ) ); ?>" class="regular-text" /><br />
-            <span class="description">Enter your fields of research</span>
-            </td>
-        </tr>
    <tr><th>
 <?php
 	wp_nonce_field('email_display','email_display_nonce');
@@ -235,21 +228,35 @@ add_action( 'personal_options_update', 'save_extra_profile_fields' );
 add_action( 'edit_user_profile_update', 'save_extra_profile_fields' );
 
 /*Add users role*/
-add_role('faculty_general','Faculty',get_role('author')->capabilities);
+//Core
+add_role('distinguished_professor','Distinguished Professor',get_role('author')->capabilities);
+add_role('faculty_assistant','Assistant Faculty',get_role('author')->capabilities);
+add_role('faculty_associate','Associate Faculty',get_role('author')->capabilities);
+add_role('faculty_full','Full Faculty',get_role('author')->capabilities);
+
+//Graduate
 add_role('graduate_student','Graduate Student',get_role('contributor')->capabilities);
-add_role('staff','Staff',get_role('contributor')->capabilities);
 add_role('graduate_xep','Graduate Student XEP',get_role('contributor')->capabilities);
-add_role('staff','Staff',get_role('contributor')->capabilities);
 add_role('graduate_phd','Graduate PhD Students',get_role('contributor')->capabilities);
 add_role('graduate_master','Graduate Master Students',get_role('contributor')->capabilities);
+
+//Researcher
 add_role('researcher_scholar','Researcher/Scholar',get_role('author')->capabilities);
+
+//Staff
 add_role('staff','Staff',get_role('contributor')->capabilities);
 add_role('staff_it','Staff IT',get_role('contributor')->capabilities);
 add_role('staff_officer','Staff Officers',get_role('contributor')->capabilities);
+
+//Affiliated
+add_role('faculty_affiliated','Affiliated Faculty',get_role('author')->capabilities);
 add_role('faculty_emeritus','Faculty Emeritus',get_role('author')->capabilities);
 add_role('faculty_adjunct','Faculty Adjunct',get_role('author')->capabilities);
+
+//Leadership
 add_role('faculty_chair','Faculty Chair',get_role('author')->capabilities);
 add_role('faculty_vice_chair','Faculty Vice Chair',get_role('author')->capabilities);
+
 /*author template*/
 function author_template($template){
 global $post;
