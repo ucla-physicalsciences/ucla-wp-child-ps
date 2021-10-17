@@ -41,10 +41,8 @@
             <dt><?php echo $faculty_group ?></dt>
           </button>
           <dd class="accordion__content">
-            <ul style="list-style:none;">
-              <?php foreach( $user_query->results as $user ) { ?>
-                <div class="col span_5_of_12">
-                <li>
+            <?php foreach( $user_query->results as $user ) { ?>
+              <div class="col span_5_of_12">
                 <article class="person-card">
                   <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
                   <div class="person-card__info-wrapper">
@@ -58,10 +56,8 @@
                     <p class="person-card__description"><?php echo esc_html($user->description);?></p>
                   </div>
                 </article>
-                </li>
                 </div>
-              <?php } ?>
-            </ul>
+            <?php } ?>
           </dd>
           </dl>
         </div>
