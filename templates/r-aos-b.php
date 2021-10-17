@@ -15,7 +15,16 @@
 
        
       </div>
-<!--Faculty Core-->
+      <!--Faculty Core--><?php
+function check_has_user_role($user,$check_role){
+    if(in_array( $check_role, (array) $user->roles )){
+        return true;
+    }
+    return false;
+}
+$term = get_term('bioigeochemistry','research_field');
+$users = get_objects_in_term( $term->term_id, $term->taxonomy );
+	    if ( !empty( $users ) && (check_has_user_role($users, 'faculty_full') or check_has_user_role($users, 'faculty_associate')or check_has_user_role($users, 'faculty_assistant')or check_has_user_role($users, 'distinguished_professor'))  ){?>
 <div class="accordion accordion--card-content accordion--mobile-only">
 <dl>
 <button class="accordion__title" aria-expanded="false">
@@ -23,7 +32,6 @@
 </button>
 <dd class="accordion__content">
 <?php
-
 $args_second= array(
         'role' => 'faculty_full',
         'orderby'=> 'user_nicename',
@@ -150,7 +158,7 @@ foreach ( $users_fifth as $user ) {
 </article>
 <?php '</li>';}
 ?></div><?php }
-echo '</ul>';
+echo '</ul>';}
 //End Distinguished
 ?>
 </dd>
