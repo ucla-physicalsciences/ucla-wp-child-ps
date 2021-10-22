@@ -235,7 +235,6 @@ add_role('faculty_associate','Associate Faculty',get_role('author')->capabilitie
 add_role('faculty_full','Full Faculty',get_role('author')->capabilities);
 
 //Graduate
-add_role('graduate_student','Graduate Student',get_role('contributor')->capabilities);
 add_role('graduate_xep','Graduate Student XEP',get_role('contributor')->capabilities);
 add_role('graduate_phd','Graduate PhD Students',get_role('contributor')->capabilities);
 add_role('graduate_master','Graduate Master Students',get_role('contributor')->capabilities);
@@ -244,18 +243,18 @@ add_role('graduate_master','Graduate Master Students',get_role('contributor')->c
 add_role('researcher_scholar','Researcher/Scholar',get_role('author')->capabilities);
 
 //Staff
-add_role('staff','Staff',get_role('contributor')->capabilities);
 add_role('staff_it','Staff IT',get_role('contributor')->capabilities);
 add_role('staff_officer','Staff Officers',get_role('contributor')->capabilities);
 
 //Affiliated
-add_role('faculty_affiliated','Affiliated Faculty',get_role('author')->capabilities);
+//add_role('faculty_affiliated','Affiliated Faculty',get_role('author')->capabilities);
 add_role('faculty_emeritus','Faculty Emeritus',get_role('author')->capabilities);
 add_role('faculty_adjunct','Faculty Adjunct',get_role('author')->capabilities);
 
 //Leadership
 add_role('faculty_chair','Faculty Chair',get_role('author')->capabilities);
 add_role('faculty_vice_chair','Faculty Vice Chair',get_role('author')->capabilities);
+
 
 /*author template*/
 function author_template($template){
