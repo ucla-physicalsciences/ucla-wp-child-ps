@@ -123,10 +123,10 @@ $args_fifth= array(
 );
 $users_fifth=get_users($args_fifth);
 //Full
-echo '<ul style="list-style:none;">';
 foreach ( $users_second as $user ) {
         wp_get_current_user();
-?><div class="col span_5_of_12"> <?php  echo '<li>'?>
+?>
+<div class="col span_5_of_12">
 <article class="person-card">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
@@ -142,15 +142,13 @@ foreach ( $users_second as $user ) {
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
     </div>
 </article>
-<?php '</li>';
-?></div><?php }
-echo '</ul>';
+</div>
+<?php }
 //End Full
 //Associate
-echo '<ul style="list-style:none;">';
 foreach ( $users_third as $user ) {
         wp_get_current_user();
-?><div class="col span_5_of_12"> <?php  echo '<li>'?>
+?><div class="col span_5_of_12">
 <article class="person-card">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
@@ -166,9 +164,7 @@ foreach ( $users_third as $user ) {
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
     </div>
 </article>
-<?php '</li>';
-?></div><?php }
-echo '</ul>';
+</div><?php }
 //End Associate
 //Assistant
 echo '<ul style="list-style:none;">';

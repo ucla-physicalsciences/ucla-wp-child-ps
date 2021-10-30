@@ -15,37 +15,37 @@ Second ligne: Student Awards; Chi Epsilon Pi; Alumni-->
 <h3 class="pt-24 pb-12"></h3>
 <div class="ucla campus">
   <section class="tile__section tile__section--col-4">
-    <span class="tile tile__background">
+    <span class="tile tile__background has-white-text">
       <a class="tile__link" href="http://aos.ucla.edu/undergraduate/">
         <h3 class="tile__title">Undergraduate</h3>
       </a>
     </span>
-    <span class="tile tile__background">
+    <span class="tile tile__background has-white-text">
       <a class="tile__link" href="http://aos.ucla.edu/graduate/">
         <h3 class="tile__title">Graduate</h3>
       </a>
     </span>
-    <span class="tile tile__background ">
+    <span class="tile tile__background has-white-text">
       <a class="tile__link" href="http://aos.ucla.edu/advising-appointment-request/">
         <h3 class="tile__title">Advising Appointment Request</h3>
       </a>
     </span>
-<span class="tile tile__background ">
+<span class="tile tile__background has-white-text">
       <a class="tile__link" href="https://registrar.ucla.edu/academics/course-descriptions?search=A%26O+SCI">
         <h3 class="tile__title">Course Catalogue</h3>
       </a>
     </span> 
-    <span class="tile tile__background">
+    <span class="tile tile__background has-white-text">
       <a class="tile__link" href="http://aos.ucla.edu/student-awards/">
         <h3 class="tile__title">Student Awards</h3>
       </a>
     </span>
-    <span class="tile tile__background">
+    <span class="tile tile__background has-white-text">
       <a class="tile__link" href="https://xep.atmos.ucla.edu">
         <h3 class="tile__title">Chi Epsilon Pi</h3>
       </a>
     </span>
-    <span class="tile tile__background ">
+    <span class="tile tile__background has-white-text">
       <a class="tile__link" href="http://aos.ucla.edu/alumni/">
         <h3 class="tile__title">Alumni</h3>
       </a>

@@ -14,22 +14,22 @@
 <h3 class="pt-24 pb-12"></h3>
 <div class="ucla campus">
   <section class="tile__section tile__section--col-4">
-    <span class="tile tile__background">
+    <span class="tile tile__background has-white-text">
       <a class="tile__link" href="http://aos.ucla.edu/faculty/">
         <h3 class="tile__title">Faculty</h3>
       </a>
     </span>
-    <span class="tile tile__background">
+    <span class="tile tile__background has-white-text">
       <a class="tile__link" href="http://aos.ucla.edu/graduate-students/">
         <h3 class="tile__title">Graduate Students</h3>
       </a>
     </span>
-    <span class="tile tile__background ">
+    <span class="tile tile__background has-white-text">
       <a class="tile__link" href="http://aos.ucla.edu/researchers-scholars/">
         <h3 class="tile__title">Researchers / Scholars</h3>
       </a>
     </span>
-<span class="tile tile__background ">
+<span class="tile tile__background has-white-text">
       <a class="tile__link" href="http://aos.ucla.edu/staff/">
         <h3 class="tile__title">Staff</h3>
       </a>

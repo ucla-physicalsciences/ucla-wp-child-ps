@@ -1,4 +1,4 @@
-<?php /* Template Name: R-AOS Biogeochemistry Template 2 */ ?>
+<?php /* Template Name: R-AOS Biogeochemistry Template  */ ?>
 <?php get_header(); ?>
 <main id="main">
     <header class="header" >
