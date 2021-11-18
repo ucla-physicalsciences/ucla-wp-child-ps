@@ -34,8 +34,8 @@ Second ligne: Oceanography; Space Physics-->
 
                         <div class="pb-lg-3 pb-2 school-card__degree">
 
-                            <span class="school-card__degree"><b>Offers B.S., M.S., Ph.D.</b></span>
-
+<!--                            <span class="school-card__degree"><b>Offers B.S., M.S., Ph.D.</b></span>
+-->
                         </div>
 
                         <div class="p-0 school-card__content">
@@ -66,8 +66,8 @@ Second ligne: Oceanography; Space Physics-->
 
                         <div class="pb-lg-3 pb-2 school-card__degree">
 
-                            <span class="school-card__degree"><b>Offers B.S., M.S., Ph.D.</b></span>
-
+   <!--                         <span class="school-card__degree"><b>Offers B.S., M.S., Ph.D.</b></span>
+-->
                         </div>
 
                         <div class="p-0 school-card__content">
@@ -100,8 +100,8 @@ Second ligne: Oceanography; Space Physics-->
 
                         <div class="pb-lg-3 pb-2 school-card__degree">
 
-                            <span class="school-card__degree"><b>Offers B.S., M.S., Ph.D.</b></span>
-
+   <!--                         <span class="school-card__degree"><b>Offers B.S., M.S., Ph.D.</b></span>
+-->
                         </div>
 
                         <div class="p-0 school-card__content">
@@ -134,9 +134,9 @@ Second ligne: Oceanography; Space Physics-->
 
                         <div class="pb-lg-3 pb-2 school-card__degree">
 
-                            <span class="school-card__degree"><b>Offers B.S., M.S., Ph.D.</b></span>
+   <!--                         <span class="school-card__degree"><b>Offers B.S., M.S., Ph.D.</b></span>
 
-                        </div>
+       -->                 </div>
 
                         <div class="p-0 school-card__content">
                             <p class="pb-0 mb-3 mb-md-4 mb-lg-0 school-card__description">
@@ -168,9 +168,9 @@ Second ligne: Oceanography; Space Physics-->
 
                         <div class="pb-lg-3 pb-2 school-card__degree">
 
-                            <span class="school-card__degree"><b>Offers B.S., M.S., Ph.D.</b></span>
+          <!--                  <span class="school-card__degree"><b>Offers B.S., M.S., Ph.D.</b></span>
 
-                        </div>
+              -->          </div>
 
                         <div class="p-0 school-card__content">
                             <p class="pb-0 mb-3 mb-md-4 mb-lg-0 school-card__description">
@@ -182,99 +182,5 @@ Second ligne: Oceanography; Space Physics-->
             </div>
         </div>
 </div>
-
-<article class="basic-card-grey">
-  <img class="basic-card__image" src="http://aos.ucla.edu/wp-content/uploads/2021/10/Biogeochemistry.jpg" alt="Image related to field description">
-  <div class="basic-card__info-wrapper">
-    <h1 class="basic-card__title" href="http://aos.ucla.edu/biogeochemistry/"><span>Biogeochemistry</span></h1>
-    <p class="basic-card__description">Biogeochemistry descriptive text to be provided</p>
-    <div class="basic-card__buttons">
-      <button class="btn btn--tertiary">
-        Faculty
-      </button>
-     
-    </div>
-  </div>
-</article>
-<article class="basic-card">
-  <img class="basic-card__image" src="http://aos.ucla.edu/wp-content/uploads/2021/10/Atmospheric_Chemistry7.jpg" alt="Image related to field description">
-  <div class="basic-card__info-wrapper">
-    <h1 class="basic-card__title"><span>Chemistry and Radiation</span></h1>
-    <p class="basic-card__description">The Department of Atmospheric and Oceanic Sciences has a longstanding tradition of experimental and theoretical research in atmospheric chemistry and physics. The department is indeed built around a 9 story high precipitation shaft used by Hans Pruppacher to study the growth of water drops.</p>
-    <div class="basic-card__buttons">
-      <button class="btn btn--tertiary">
-        Faculty
-      </button>
-    </div>
-  </div>
-</article>
-
-<article class="basic-card-grey">
-  <img class="basic-card__image" src="http://aos.ucla.edu/wp-content/uploads/2021/10/Atmospheric_Dynamics3.png" alt="Image related to field description">
-  <div class="basic-card__info-wrapper">
-    <h1 class="basic-card__title" href="http://aos.ucla.edu/climate-weather/"><span></span>Dynamics and Climate</h1>
-    <p class="basic-card__description">UCLA is a world-class center for weather and climate research. Over the past 40 years, UCLA researchers have made historic contributions to our understanding of the fluid dynamics of the atmosphere and oceans, teleconnections between weather regimes all over the globe, and the development of techniques to simulate weather and climate.</p>
-    <div class="basic-card__buttons">
-      <button class="btn btn--tertiary">
-        Faculty
-      </button>
-    </div>
-  </div>
-</article>
-<article class="basic-card">
-  <img class="basic-card__image" src="http://aos.ucla.edu/wp-content/uploads/2021/10/Oceanography.png" alt="Image related to field description">
-  <div class="basic-card__info-wrapper">
-    <h1 class="basic-card__title" href="https://aos.ucla.edu/oceanography/"><span></span>Oceanography</h1>
-    <p class="basic-card__description">The still largely unexplored vastness of the ocean, covering about 2/3 of the surface of earth and with an average depth of almost 4 kilometers, has fascinated humans for as long as we have records for. Its currents, chemical composition, and ecosystems are all highly variable at different locations and times.</p>
-    <div class="basic-card__buttons">
-      <button class="btn btn--tertiary">
-        Faculty
-      </button>
-    </div>
-  </div>
-</article>
-<article class="basic-card-grey">
-  <img class="basic-card__image" src="http://aos.ucla.edu/wp-content/uploads/2021/10/Planetary_Atmospheres.png" alt="Image related to field description">
-  <div class="basic-card__info-wrapper">
-    <h1 class="basic-card__title"href="http://aos.ucla.edu/space-physics/"><span>Space Physics</span></h1>
-    <p class="basic-card__description">Above 100 km altitude, the Earth’s atmosphere becomes highly ionized, collisions cease to be important, and dynamics are largely controlled by the terrestrial magnetic field. This field is distorted by the continuous flow of solar wind plasma from the Sun into a cavity know as the magnetosphere, which forms the uppermost region of the Earth’s atmosphere.</p>
-    <div class="basic-card__buttons">
-      <button class="btn btn--tertiary">
-        Faculty
-      </button>
-    </div>
-  </div>
-</article></div><br><br>
-<div class="ucla campus">
-  <section class="tile__section tile__section--col-4">
-    <span class="tile tile__background ">
-      <a class="tile__link" href="http://aos.ucla.edu/biogeochemistry/">
-        <h3 class="tile__title">Biogeochemistry</h3>
-      </a>
-    </span>
-    <span class="tile tile__background">
-      <a class="tile__link" href="http://aos.ucla.edu/chemistry-radiation/">
-        <h3 class="tile__title">Chemistry & Radiation</h3>
-      </a>
-    </span> 
-    <span class="tile tile__background ">
-      <a class="tile__link" href="http://aos.ucla.edu/climate-weather/">
-        <h3 class="tile__title">Dynamics and Climate</h3>
-      </a>
-    </span> 
-    <span class="tile tile__background">
-      <a class="tile__link" href="https://aos.ucla.edu/oceanography/">
-        <h3 class="tile__title">Oceanography</h3>
-      </a>
-    </span>
-    <span class="tile tile__background ">
-      <a class="tile__link" href="http://aos.ucla.edu/space-physics/">
-        <h3 class="tile__title">Space Physics</h3>
-      </a>
-    </span>
-  </section>
-<br><br><br>
-</div>
-
 </main>
 <?php get_footer();?>

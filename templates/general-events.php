@@ -20,12 +20,12 @@
 <div class="ucla campus">
   <section class="tile__section tile__section--col-4">
     <span class="tile tile__background has-white-text">
-      <a class="tile__link" href="http://aos.ucla.edu/lectures/">
+      <a class="tile__link" href="http://aos.ucla.edu/?page_id=932/">
         <h3 class="tile__title">Lectures</h3>
       </a>
     </span>
     <span class="tile tile__background has-white-text">
-      <a class="tile__link" href="http://aos.ucla.edu/seminars-2/">
+      <a class="tile__link" href="http://aos.ucla.edu/?page_id=934/">
         <h3 class="tile__title">Seminars</h3>
       </a>
     </span>

@@ -15,22 +15,22 @@
 <div class="ucla campus">
   <section class="tile__section tile__section--col-4">
     <span class="tile tile__background has-white-text">
-      <a class="tile__link" href="http://aos.ucla.edu/faculty/">
+      <a class="tile__link" href="http://aos.ucla.edu/?page_id=67/">
         <h3 class="tile__title">Faculty</h3>
       </a>
     </span>
     <span class="tile tile__background has-white-text">
-      <a class="tile__link" href="http://aos.ucla.edu/graduate-students/">
+      <a class="tile__link" href="http://aos.ucla.edu/?page_id=76/">
         <h3 class="tile__title">Graduate Students</h3>
       </a>
     </span>
     <span class="tile tile__background has-white-text">
-      <a class="tile__link" href="http://aos.ucla.edu/researchers-scholars/">
+      <a class="tile__link" href="http://aos.ucla.edu/?page_id=?page_id=79/">
         <h3 class="tile__title">Researchers / Scholars</h3>
       </a>
     </span>
 <span class="tile tile__background has-white-text">
-      <a class="tile__link" href="http://aos.ucla.edu/staff/">
+      <a class="tile__link" href="http://aos.ucla.edu/?page_id=81/">
         <h3 class="tile__title">Staff</h3>
       </a>
     </span>

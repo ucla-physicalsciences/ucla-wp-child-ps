@@ -16,17 +16,17 @@ Second ligne: Student Awards; Chi Epsilon Pi; Alumni-->
 <div class="ucla campus">
   <section class="tile__section tile__section--col-4">
     <span class="tile tile__background has-white-text">
-      <a class="tile__link" href="http://aos.ucla.edu/undergraduate/">
+      <a class="tile__link" href="http://aos.ucla.edu/?page_id=49/">
         <h3 class="tile__title">Undergraduate</h3>
       </a>
     </span>
     <span class="tile tile__background has-white-text">
-      <a class="tile__link" href="http://aos.ucla.edu/graduate/">
+      <a class="tile__link" href="http://aos.ucla.edu/?page_id=51/">
         <h3 class="tile__title">Graduate</h3>
       </a>
     </span>
     <span class="tile tile__background has-white-text">
-      <a class="tile__link" href="http://aos.ucla.edu/advising-appointment-request/">
+      <a class="tile__link" href="http://aos.ucla.edu/?page_id=99/">
         <h3 class="tile__title">Advising Appointment Request</h3>
       </a>
     </span>
@@ -36,7 +36,7 @@ Second ligne: Student Awards; Chi Epsilon Pi; Alumni-->
       </a>
     </span> 
     <span class="tile tile__background has-white-text">
-      <a class="tile__link" href="http://aos.ucla.edu/student-awards/">
+      <a class="tile__link" href="http://aos.ucla.edu/?page_id=158/">
         <h3 class="tile__title">Student Awards</h3>
       </a>
     </span>
@@ -46,7 +46,7 @@ Second ligne: Student Awards; Chi Epsilon Pi; Alumni-->
       </a>
     </span>
     <span class="tile tile__background has-white-text">
-      <a class="tile__link" href="http://aos.ucla.edu/alumni/">
+      <a class="tile__link" href="http://aos.ucla.edu/?page_id=55/">
         <h3 class="tile__title">Alumni</h3>
       </a>
     </span>
