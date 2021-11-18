@@ -15,7 +15,7 @@
                     
                     
       </div>        
-    <?php
+<?php
     $faculty = array( 'Full Faculty' => array( 'faculty_full' ),
                     'Associate Faculty' => array( 'faculty_associate' ),
                     'Assistant Faculty' => array( 'faculty_assistant' ),

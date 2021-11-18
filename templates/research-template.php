@@ -19,7 +19,7 @@ Second ligne: Oceanography; Space Physics-->
         <div class="mb-5 school-card__wrapper">
 
             <div class="pb-lg-3 ucla campus school-card__ribbon">
-                <a href="http://aos.ucla.edu/?page_id=38">
+                <a href="http://aos.ucla.edu/biogeochemistry/">
                     <div class="col span_4_of_12 mt-n3 mb-lg-0 mb-3 school-card__img">
                         <img src="http://aos.ucla.edu/wp-content/uploads/2021/10/Biogeochemistry2.png" class="img--retina img--wide" alt="Antartica ocean figure" />
                     </div>
@@ -51,12 +51,12 @@ Second ligne: Oceanography; Space Physics-->
  <div class="pt-0 mb-n58 pb-lg-64  pb-md-64  mb-32 section-wrapper school-card__section ">
         <div class="mb-5 school-card__wrapper">
             <div class="pb-lg-3 ucla campus school-card__ribbon">
-                <a href="http://aos.ucla.edu/?page_id=38">
+                <a href="http://aos.ucla.edu/chemistry-radiation/">
                     <div class="col span_4_of_12 mt-n3 mb-lg-0 mb-3 school-card__img">
                         <img src="http://aos.ucla.edu/wp-content/uploads/2021/10/Atmospheric_Chemistry7.jpg" class="img--retina img--wide" alt="Antartica ocean figure" />
                     </div>
                     <div class="mt-lg-32 col mb-0 span_5_of_12 school-card__title">
-                        <span><span><h2 class="pb-0">Chemistry and Radiation</h2></span></span>
+                        <span><span><h2 class="pb-0">Chemistry and Physics</h2></span></span>
        <br>             </div>
                 </a>
 
@@ -85,7 +85,7 @@ Second ligne: Oceanography; Space Physics-->
         <div class="mb-5 school-card__wrapper">
 
             <div class="pb-lg-3 ucla campus school-card__ribbon">
-                <a href="http://aos.ucla.edu/?page_id=38">
+                <a href="http://aos.ucla.edu/climate-weather/">
                     <div class="col span_4_of_12 mt-n3 mb-lg-0 mb-3 school-card__img">
                         <img src="http://aos.ucla.edu/wp-content/uploads/2021/10/Atmospheric_Dynamics3.png" class="img--retina img--wide pt-40" alt="Antartica ocean figure" />
                     </div>
@@ -152,7 +152,7 @@ Second ligne: Oceanography; Space Physics-->
         <div class="mb-5 school-card__wrapper">
 
             <div class="pb-lg-3 ucla campus school-card__ribbon">
-                <a href="http://aos.ucla.edu/?page_id=38">
+                <a href="http://aos.ucla.edu/space-physics">
                     <div class="col span_4_of_12 mt-n3 mb-lg-0 mb-3 school-card__img">
                         <img src="http://aos.ucla.edu/wp-content/uploads/2021/10/Planetary_Atmospheres.png" class="img--retina img--wide pl-40" alt="Antartica ocean figure" />
                         <img src="http://aos.ucla.edu/wp-content/uploads/2021/10/Space_Physics.jpg" class="img--retina img--wide" alt="Antartica ocean figure" />

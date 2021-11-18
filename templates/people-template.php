@@ -5,8 +5,8 @@
 <div class = "ucla campus">
 <div class= "col span_12_of_12">
 <br>
-<h2 class="yellow-side-header">People</h2><br><br>
-<p class="lead"> Introductory description of the People Menu section </p><p>Descriptive text are type 2 for more detailed informations on this section</p>
+<h2 class="yellow-side-header">Department Directory</h2><br><br>
+<p class="lead"> Introductory description of the Department Directory Menu section </p><p>Descriptive text are type 2 for more detailed informations on this section</p>
 </div>
 </div>
 </header>
