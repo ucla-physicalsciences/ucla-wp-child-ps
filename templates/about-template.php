@@ -17,32 +17,37 @@ Third ligne: Fiveday Forecast: Weather Tour; Current Forecast-->
 <div class="ucla campus">
   <section class="tile__section tile__section--col-4">
     <span class="tile tile__background has-white-text">
-      <a class="tile__link" href="http://aos.ucla.edu/climate-statement/">
+      <a class="tile__link" href="http://aos.ucla.edu/?page_id=57/">
         <h3 class="tile__title">Climate Statement</h3>
       </a>
     </span>
     <span class="tile tile__background has-white-text">
-      <a class="tile__link" href="http://aos.ucla.edu/diversity-statement/">
+      <a class="tile__link" href="http://aos.ucla.edu/?page_id=59/">
         <h3 class="tile__title">Diversity Statement</h3>
       </a>
     </span>
     <span class="tile tile__background has-white-text">
-      <a class="tile__link" href="http://aos.ucla.edu/visitor-information/">
+      <a class="tile__link" href="http://aos.ucla.edu/?page_id=997/">
+        <h3 class="tile__title">History</h3>
+      </a>
+    </span>
+    <span class="tile tile__background has-white-text">
+      <a class="tile__link" href="http://aos.ucla.edu/?page_id=61/">
         <h3 class="tile__title">Visitor Information</h3>
       </a>
     </span>
     <span class="tile tile__background has-white-text">
-      <a class="tile__link" href="http://aos.ucla.edu/employment/">
+      <a class="tile__link" href="http://aos.ucla.edu/?page_id=63/">
         <h3 class="tile__title">Employment</h3>
       </a>
     </span>
     <span class="tile tile__background has-white-text">
-      <a class="tile__link" href="http://aos.ucla.edu/it-documentation-and-help/">
+      <a class="tile__link" href="http://aos.ucla.edu/?page_id=142/">
         <h3 class="tile__title">IT Documentation and Help</h3>
       </a>
     </span>
     <span class="tile tile__background has-white-text">
-      <a class="tile__link" href="http://aos.ucla.edu/research-vessel-zodiac/">
+      <a class="tile__link" href="http://aos.ucla.edu/?page_id=144/">
         <h3 class="tile__title">Research Vessel Zodiac</h3>
       </a>
     </span>
@@ -52,7 +57,7 @@ Third ligne: Fiveday Forecast: Weather Tour; Current Forecast-->
       </a>
     </span>
     <span class="tile tile__background has-white-text">
-      <a class="tile__link" href="http://aos.ucla.edu/weather-tour/">
+      <a class="tile__link" href="http://aos.ucla.edu/?page_id=65/">
         <h3 class="tile__title">Weather Tour</h3>
       </a>
     </span>
