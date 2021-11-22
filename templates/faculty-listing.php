@@ -95,7 +95,7 @@ echo '</ul>';
 <button class="accordion__title" aria-expanded="false">
 <dt>Core Faculty</dt>
 </button>
-<dd class="accordion__content">
+<dd class="accordion__content"> 
 <?php
 
 $args_second= array(

@@ -1,4 +1,4 @@
-<?php /* Template Name: Lecture Event Listing */ ?>
+<?php /* Template Name: Newsletters Listing */ ?>
 
 <?php get_header();?>
 <main id="main">
@@ -6,20 +6,20 @@
 <div class = "ucla campus">
 <div class= "col span_12_of_12">
 <br>
-<h2 class="yellow-side-header">Lectures</h2><br><br>
-<p class="lead"> Introductory description of the Lecture Event category </p>
-<p>Below you'll find a listing of all the Departement Lecture Events</p>
+<h2 class="yellow-side-header">Newsletters</h2><br><br>
+<p class="lead"> Introductory description of the Newsletters category </p>
+<p>Below you'll find a listing of all the Newsletters</p>
 </div>
 </div>
 </header>
 <div class = "ucla campus">
 <?php
 $args = array (
-        'tax_query' => array( array (
-                'taxonomy' => 'events_type',
-                'field' => 'slug',
-                'terms'=> 'lecture')),
-        'post_type'=>'events',
+	'tax_query' => array( array (
+		'taxonomy' => 'news_type',
+		'field' => 'slug',
+		'terms'=> 'newsletters')),
+        'post_type'=>'news',
                 'posts_per_page' => 12,
                 'orderby'       => 'date',
                 );
@@ -38,24 +38,9 @@ $the_query = new WP_Query( $args );?>
         </h1>
       </a>
       <div class="story__secondary-content">
-        <p class="story__secondary-blurb"><b>Speaker: </b><?php if(get_post_meta($post->ID, 'event_speaker', true)):
-	echo get_post_meta($post->ID, 'event_speaker', true);endif;?><br><b>Institution:</b>
-<?php if(get_post_meta($post->ID, 'event_institution', true)):?>
-        <?php
-          echo get_post_meta($post->ID, 'event_institution', true);
-endif;?><br><b>Location: </b>
-<?php if(get_post_meta($post->ID, 'event_location', true)):?>
-        <?php
-          echo get_post_meta($post->ID, 'event_location', true);
-endif;?>
-<br><b>When: </b>
-<?php if(get_post_meta($post->ID, 'event_date', true)):?>
-        <?php
-echo get_post_meta($post->ID, 'event_date', true);endif;?> from <?php if(get_post_meta($post->ID, 'event_time', true)):?>
-        <?php
-echo get_post_meta($post->ID, 'event_time', true);
-endif;?>
-</p>
+        <p class="story__secondary-blurb"><?php if(get_post_meta($post->ID, 'summary_news', true)):
+          echo get_post_meta($post->ID, 'summary_news', true);
+endif;?></p>
         <p class="story__secondary-source"></p>
       </div>
     </article>

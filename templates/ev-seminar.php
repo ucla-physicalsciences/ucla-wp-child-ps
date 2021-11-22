@@ -15,7 +15,10 @@
 <div class = "ucla campus">
 <?php
 $args = array (
-        'cat' => 'seminar',
+        'tax_query' => array( array (
+                'taxonomy' => 'events_type',
+                'field' => 'slug',
+                'terms'=> 'seminar')),
         'post_type'=>'events',
                 'posts_per_page' => 12,
                 'orderby'       => 'date',

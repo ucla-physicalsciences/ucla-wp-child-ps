@@ -25,7 +25,7 @@
       </a>
     </span>
     <span class="tile tile__background has-white-text">
-      <a class="tile__link" href="http://aos.ucla.edu/?page_id=?page_id=79/">
+      <a class="tile__link" href="http://aos.ucla.edu/?page_id=79/">
         <h3 class="tile__title">Researchers / Scholars</h3>
       </a>
     </span>
