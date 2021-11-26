@@ -1,0 +1,8 @@
+img {
+  vertical-align: middle;
+  border-style: none; 
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }

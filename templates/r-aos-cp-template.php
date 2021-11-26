@@ -17,13 +17,13 @@
 
       </div>
 <?php
-    $members = array( 'Core Faculty' => array( 'faculty_full','faculty_associate','faculty_assistant', 'distinguished_professor'  ),
+    $members_cp = array( 'Core Faculty' => array( 'faculty_full','faculty_associate','faculty_assistant', 'distinguished_professor'  ),
                     'Affiliated Faculty' => array( 'faculty_affiliated','faculty_adjunct','faculty_emeritus' ),
                     'Research/Scholar' => array( 'researcher_scholar' ),
                     'Graduate students' => array( 'graduate_master', 'graduate_phd','graduate_xep' ) );
-    foreach( $members as $group_members => $group_member_roles ) {
+    foreach( $members_cp as $group_members_cp => $group_member_roles_cp ) {
       $args = array(
-        'role__in' => $group_member_roles,
+        'role__in' => $group_member_roles_cp,
         'orderby' => 'user_nicename',
         'order' => 'ASC',
         'tax_query' => array(
@@ -39,10 +39,10 @@
         <div class="accordion accordion--card-content accordion--mobile-only">
           <dl>
           <button class="accordion__title" aria-expanded="false">
-            <dt><?php echo $group_members ?></dt>
+            <dt><?php echo $group_members_wp ?></dt>
           </button>
           <dd class="accordion__content">
-            <?php foreach( $user_query->results as $user ) { ?>
+	    <?php foreach( $user_query->results as $user ) { ?>
               <div class="col span_5_of_12">
                 <article class="person-card">
                   <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">

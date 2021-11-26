@@ -340,11 +340,11 @@ function manage_research_field_column($display,$column,$term_id){
 	}
 }
 
+add_action( 'wp_enqueue_scripts', 'extra_css_files' );
+function extra_css_files(){
+wp_enqueue_style('quarterly-updates-CSS', get_stylesheet_directory_uri() .'/extra-css/quarterly-updates.css', array('ucla-style' ), wp_get_theme()->get('Version') );
 
-function my_datepicker_enqueue() {
-            wp_enqueue_script( 'jquery-ui-datepicker' ); // enqueue datepicker from WP
-            wp_enqueue_style( 'jquery-ui-style', '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css');
+wp_enqueue_style('news-CSS', get_stylesheet_directory_uri() . '/extra-css/news.css',array('ucla-style' ), wp_get_theme()->get('Version') );
+
+wp_enqueue_style('img-CSS', get_stylesheet_directory_uri() . '/extra-css/img.css',array('ucla-style' ), wp_get_theme()->get('Version') );
 }
-add_action( 'admin_enqueue_scripts', 'my_datepicker_enqueue' );
-
-

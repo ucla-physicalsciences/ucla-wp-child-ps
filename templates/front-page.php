@@ -1,26 +1,26 @@
-<?php /* Template Name: Newsletters Listing */ ?>
+<?php /* Template Name: AOS Front Page Template */ ?>
+<?php get_header(); ?>
+<main id="main"> 
+    <header class="header" >
+      <div class="ucla campus">
+        <div class="col span_12_of_12"><br>
+  <div class="breadcrumb"><h2 class="yellow-side-header"><?php the_title(); ?></h2> 
+</div>
+      </div>
+    </header>
+    <div class="ucla campus">
 
-<?php get_header();?>
-<main id="main">
-<header class="header">
-<div class = "ucla campus">
-<div class= "col span_12_of_12">
-<br>
-<h2 class="yellow-side-header">Newsletters</h2><br><br>
-<p class="lead"> Introductory description of the Newsletters category </p>
-<p>Below you'll find a listing of all the Newsletters</p>
-</div>
-</div>
-</header>
-<div class = "ucla campus">
+      <div class="col span_9_of_12">
+  <p>      <?php the_content(); ?></p>
+
 <?php
 $args = array (
-	'tax_query' => array( array (
-		'taxonomy' => 'news_type',
-		'field' => 'slug',
-		'terms'=> 'newsletters')),
+        'tax_query' => array( array (
+                'taxonomy' => 'news_type',
+                'field' => 'slug',
+                'terms'=> 'newsletters')),
         'post_type'=>'news',
-                'posts_per_page' => 12,
+                'posts_per_page' => 3,
                 'orderby'       => 'date',
                 );
 $the_query = new WP_Query( $args );?>
@@ -32,7 +32,7 @@ $the_query = new WP_Query( $args );?>
     $thumbnail_other = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );?>
     <li class="quarterly-listing__item col-12 col-md-6 col-lg-12">
                             <div class="quarterly-listing__container">
-				<div class="quarterly-listing__image-container">
+                                <div class="quarterly-listing__image-container">
 <a href="<?php echo the_permalink(); ?>">
 <img class="quarterly-listing__image lazyload" src="<?php echo $thumbnail_other[0]?>" /></a>
    </div>
@@ -53,6 +53,7 @@ endif;?></span></p></span></div>
 
      <?php endif; ?>
 </ul></section>
-</div>
+</div></div>
 </main>
-<?php get_footer();?>
+
+<?php get_footer(); ?>
