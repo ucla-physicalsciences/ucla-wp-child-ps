@@ -56,30 +56,6 @@ endif;?> </p>
 </section>
 <!--End of Attempts-->
 
-<section>
-<?php
-    if ( $the_query->have_posts() ) : ?>
-        <?php while ( $the_query->have_posts() ) : $the_query->the_post();
-    $thumbnail_other = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );?>
-    <article class="basic-card-grey">
-    <a href="<?php echo the_permalink(); ?>">
-    <img class="basic-card__image" src="<?php echo $thumbnail_other[0]?>" />
-</a>
-      <div class="basic-card__info-wrapper">
-	 <h3 class="basic-card__title">
-        <span  class="basic-card__title"><?php echo the_title();?></span>
-        </h3>
-      <p class="basic-card__description"><?php if(get_post_meta($post->ID, 'summary_news', true)):
-          echo get_post_meta($post->ID, 'summary_news', true);
-endif;?></p>
-      </div>
-    </article>
-        <?php endwhile; ?>
-
-        <?php wp_reset_postdata(); ?>
-
-     <?php endif; ?>
-</section>
 </div>
 </main>
 <?php get_footer();?>

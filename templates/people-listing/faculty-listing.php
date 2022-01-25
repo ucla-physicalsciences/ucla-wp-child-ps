@@ -1,5 +1,4 @@
 <?php /* Template Name: Faculty Listing */ ?>
-
 <?php get_header();?>
 <main id="main">
 <header class="header">
@@ -13,14 +12,10 @@
 </div>
 </header>
 <div class = "ucla campus">
-
+<div class = "people_category"
+<h2>Leadership</h2>
 <!--Faculty Chair + VC-->
-<div class="accordion accordion--card-content accordion--mobile-only">
-<dl>
-<button class="accordion__title" aria-expanded="false">
-<dt>Leadership</dt>
-</button>
-<dd class="accordion__content">
+
 <?php
 
 $args= array(
@@ -35,11 +30,14 @@ $args_second= array(
 );
 $users=get_users($args);
 $users_second=get_users($args_second);
+?> <?php
 echo '<ul style="list-style:none;">';
 //CHAIR
 foreach ( $users as $user ) {
         wp_get_current_user();
-?><div class="col span_5_of_12"> <?php  echo '<li>'?>
+?>
+ <?php  echo '<li>'?>
+
 <article class="person-card-grey">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
@@ -55,16 +53,15 @@ foreach ( $users as $user ) {
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
     </div>
 </article>
-<?php '</li>';
-?></div><?php }
-echo '</ul>';
+<?php echo '</li>';
+ }
 
 //END CHAIR
 //VC
-//echo '<ul style="list-style:none;">';
+
 foreach ( $users_second as $user ) {
-        wp_get_current_user();
-?><div class="col span_5_of_12"> <?php  echo '<li>'?>
+wp_get_current_user();
+?> <?php  echo '<li>'?>
 <article class="person-card-grey">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
@@ -80,22 +77,16 @@ foreach ( $users_second as $user ) {
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
     </div>
 </article>
+
 <?php '</li>';
-?></div><?php }
+
 echo '</ul>';
 ?>
-
 <!--End  VC-->
-</dd>
-</dl>
 </div>
 <!--Faculty Core-->
-<div class="accordion accordion--card-content accordion--mobile-only">
-<dl>
-<button class="accordion__title" aria-expanded="false">
-<dt>Core Faculty</dt>
-</button>
-<dd class="accordion__content"> 
+<div class="people_category">
+<h2> Faculty Core </h2>
 <?php
 
 $args_second= array(
@@ -123,10 +114,11 @@ $args_fifth= array(
 );
 $users_fifth=get_users($args_fifth);
 //Full
+echo '<ul style="list-style:none;">';
 foreach ( $users_second as $user ) {
         wp_get_current_user();
 ?>
-<div class="col span_5_of_12">
+<?php  echo '<li>'?>
 <article class="person-card-grey ">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
@@ -142,13 +134,13 @@ foreach ( $users_second as $user ) {
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
     </div>
 </article>
-</div>
-<?php }
+<?php '</li>'; }
 //End Full
 //Associate
 foreach ( $users_third as $user ) {
         wp_get_current_user();
-?><div class="col span_5_of_12">
+?>
+<?php echo '<li>'?>
 <article class="person-card-grey">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
@@ -164,13 +156,13 @@ foreach ( $users_third as $user ) {
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
     </div>
 </article>
-</div><?php }
+<?php '</li>';}
 //End Associate
 //Assistant
-echo '<ul style="list-style:none;">';
+
 foreach ( $users_forth as $user ) {
         wp_get_current_user();
-?><div class="col span_5_of_12"> <?php  echo '<li>'?>
+?> <?php  echo '<li>'?>
 <article class="person-card-grey">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
@@ -186,15 +178,12 @@ foreach ( $users_forth as $user ) {
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
     </div>
 </article>
-<?php '</li>';
-?></div><?php }
-echo '</ul>';
+<?php '</li>';}
 //End Assistant
 //Distinguished
-echo '<ul style="list-style:none;">';
 foreach ( $users_fifth as $user ) {
         wp_get_current_user();
-?><div class="col span_5_of_12"> <?php  echo '<li>'?>
+?> <?php  echo '<li>'?>
 <article class="person-card-grey">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
@@ -208,24 +197,18 @@ foreach ( $users_fifth as $user ) {
 
                 };?></span></h2>
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
-    </div>
+    
 </article>
-<?php '</li>';
-?></div><?php }
+<?php '</li>';}
 echo '</ul>';
 //End Distinguished
 ?>
-</dd>
-</dl>
+
 </div>
 <!--End Faculty Core-->
 <!--Faculty Affiliated-->
-<div class="accordion accordion--card-content accordion--mobile-only">
-<dl>
-<button class="accordion__title" aria-expanded="false">
-<dt>Affiliated Faculty</dt>
-</button>
-<dd class="accordion__content">
+<div class="people_category">
+<h2>Affiliated Faculty</h2>
 <?php
 
 $args= array(
@@ -248,9 +231,10 @@ $args_third= array(
 $users_third=get_users($args_third);
 //AFFILIATED
 echo '<ul style="list-style:none;">';
+
 foreach ( $users as $user ) {
         wp_get_current_user();
-?><div class="col span_5_of_12"> <?php  echo '<li>'?>
+?> <?php  echo '<li>'?>
 <article class="person-card-grey">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
@@ -267,13 +251,13 @@ foreach ( $users as $user ) {
     </div>
 </article>
 <?php '</li>';
-?></div><?php }
-echo '</ul>';
+?><?php }
+
 //ADJUNCT
-echo '<ul style="list-style:none;">';
+
 foreach ( $users_second as $user ) {
         wp_get_current_user();
-?><div class="col span_5_of_12"> <?php  echo '<li>'?>
+?> <?php  echo '<li>'?>
 <article class="person-card-grey">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
@@ -290,13 +274,13 @@ foreach ( $users_second as $user ) {
     </div>
 </article>
 <?php '</li>';
-?></div><?php }
-echo '</ul>';
+?><?php }
+
 //EMERITUS
-echo '<ul style="list-style:none;">';
+
 foreach ( $users_third as $user ) {
         wp_get_current_user();
-?><div class="col span_5_of_12"> <?php  echo '<li>'?>
+?> <?php  echo '<li>'?>
 <article class="person-card-grey">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
@@ -313,15 +297,11 @@ foreach ( $users_third as $user ) {
     </div>
 </article>
 <?php '</li>';
-?></div><?php }
+?><?php }
 echo '</ul>';
 ?>
-</dd>
-</dl>
 </div>
 <!--End Faculty Affiliated-->
-
-
 </div>
 </main>
 <?php get_footer();?>
