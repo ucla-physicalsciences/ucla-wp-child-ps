@@ -228,32 +228,26 @@ add_action( 'personal_options_update', 'save_extra_profile_fields' );
 add_action( 'edit_user_profile_update', 'save_extra_profile_fields' );
 
 /*Add users role*/
-//Core
-add_role('distinguished_professor','Distinguished Professor',get_role('author')->capabilities);
-add_role('faculty_assistant','Assistant Faculty',get_role('author')->capabilities);
-add_role('faculty_associate','Associate Faculty',get_role('author')->capabilities);
-add_role('faculty_full','Full Faculty',get_role('author')->capabilities);
+//Faculty
+add_role('faculty_adjunct_professor','Adjunct Professor',get_role('author')->capabilities);
+add_role('faculty_assistant_professor','Assistant Professor',get_role('author')->capabilities);
+add_role('faculty_associate_professor','Associate Professor',get_role('author')->capabilities);
+add_role('faculty_full_professor','Full Professor',get_role('author')->capabilities);
 
 //Graduate
-add_role('graduate_xep','Graduate Student XEP',get_role('contributor')->capabilities);
-add_role('graduate_phd','Graduate PhD Students',get_role('contributor')->capabilities);
-add_role('graduate_master','Graduate Master Students',get_role('contributor')->capabilities);
+add_role('graduate_student','Graduate Student',get_role('contributor')->capabilities);
 
 //Researcher
 add_role('researcher_scholar','Researcher/Scholar',get_role('author')->capabilities);
 
 //Staff
-add_role('staff_it','Staff IT',get_role('contributor')->capabilities);
-add_role('staff_officer','Staff Officers',get_role('contributor')->capabilities);
+add_role('staff_cao','CAO',get_role('contributor')->capabilities);
+add_role('staff_student_affairs','Student Affairs',get_role('contributor')->capabilities);
+add_role('staff_fund_managers','Fund Managers',get_role('contributor')->capabilities);
+add_role('staff_academic_personnel','Academic Personnel',get_role('contributor')->capabilities);
+add_role('staff_office_coordinator','Office Coordinator',get_role('contributor')->capabilities);
+add_role('staff_it','IT',get_role('contributor')->capabilities);
 
-//Affiliated
-//add_role('faculty_affiliated','Affiliated Faculty',get_role('author')->capabilities);
-add_role('faculty_emeritus','Faculty Emeritus',get_role('author')->capabilities);
-add_role('faculty_adjunct','Faculty Adjunct',get_role('author')->capabilities);
-
-//Leadership
-add_role('faculty_chair','Faculty Chair',get_role('author')->capabilities);
-add_role('faculty_vice_chair','Faculty Vice Chair',get_role('author')->capabilities);
 
 
 /*author template*/
@@ -345,7 +339,7 @@ function extra_css_files(){
 wp_enqueue_style('quarterly-updates-CSS', get_stylesheet_directory_uri() .'/extra-css/quarterly-updates.css', array('ucla-style' ), wp_get_theme()->get('Version') );
 
 wp_enqueue_style('news-CSS', get_stylesheet_directory_uri() . '/extra-css/news.css',array('ucla-style' ), wp_get_theme()->get('Version') );
-
+wp_enqueue_style('listing-CSS', get_stylesheet_directory_uri() . '/extra-css/listing.css',array('ucla-style' ), wp_get_theme()->get('Version') );
 wp_enqueue_style('img-CSS', get_stylesheet_directory_uri() . '/extra-css/img.css',array('ucla-style' ), wp_get_theme()->get('Version') );
 wp_enqueue_style('accordion-CSS', get_stylesheet_directory_uri() . '/extra-css/accordion.css',array('ucla-style' ), wp_get_theme()->get('Version') ); }
 

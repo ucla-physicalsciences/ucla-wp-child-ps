@@ -6,32 +6,31 @@
 <div class = "ucla campus">
 <div class= "col span_12_of_12">
 <br>
-<h2 class="yellow-side-header">Staff</h2><br><br>
+<h1>Staff</h1><br><br>
 <p class="lead"> Introductory description of the Staff </p>
 <p>Below you'll find a listing of the Staff Member categorized by area of expertise</p>
 </div>
 </div>
 </header>
 <div class = "ucla campus">
-<!--Staff General-->
-<div class="accordion accordion--card-content accordion--mobile-only">
-<dl>
-<button class="accordion__title" aria-expanded="false">
-<dt>Staff</dt>
-</button>
-<dd class="accordion__content">
+<!--CAO-->
+
+<div class = "role-listing-wrapper">
+<h2 class="yellow-side-header"> CAO </h2>
+<div class= "role-listing">
 <?php
 
 $args= array(
-        'role' => 'staff',
+        'role' => 'staff_cao',
         'orderby'=> 'user_nicename',
         'order' => 'ASC'
 );
-$users=get_users($args);
-echo '<ul style="list-style:none;">';
+$users=get_users($args);?>
+<?php
+echo '<ul style="list-style:none; width:180%;">';
 foreach ( $users as $user ) {
         wp_get_current_user();
-?><div class="col span_5_of_12"> <?php  echo '<li>'?>
+  echo '<li style= "width:33%; height:500px; display:inline-block; float:left;">'?>
 <article class="person-card-grey">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
@@ -45,40 +44,39 @@ foreach ( $users as $user ) {
 
                 };?></span></h2>
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
-    </div>
+    
 </article>
 <?php '</li>';
-?></div><?php }
+ }
 echo '</ul>';
 ?>
-</dd>
-</dl>
+
+
+<!--END-->
 </div>
-<!--End Staff General-->
-<!--Staff IT-->
-<div class="accordion accordion--card-content accordion--mobile-only">
-<dl>
-<button class="accordion__title" aria-expanded="false">
-<dt>Staff - IT</dt>
-</button>
-<dd class="accordion__content">
+
+<br>
+<!--Student Affairs-->
+<h2 class="yellow-side-header"> Student Affairs </h2>
+<div class= "role-listing">
 <?php
 
 $args= array(
-        'role' => 'staff_it',
+        'role' => 'staff_student_affairs',
         'orderby'=> 'user_nicename',
         'order' => 'ASC'
 );
-$users=get_users($args);
-echo '<ul style="list-style:none;">';
+$users=get_users($args);?>
+<?php
+echo '<ul style="list-style:none; width:180%;">';
 foreach ( $users as $user ) {
         wp_get_current_user();
-?><div class="col span_5_of_12"> <?php  echo '<li>'?>
+ echo '<li style= "width:33%; height:500px; display:inline-block; float:left;">'?>
 <article class="person-card-grey">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
 <div class="person-card__info-wrapper">
-<h1 class="person-card__name"><a style = "text-decoration: none;"  href="<?php echo get_author_posts_url($user->ID);?>"><span></a><?php echo esc_html($user->display_name);?></span></h1>
+<h1 class="person-card__name"><a style = "text-decoration: none;"  href="<?php echo get_author_posts_url($user->ID);?>"><span><?php echo esc_html($user->display_name);?></span></a></h1>
 <h2 class="person-card__department"><span><?php
         global $wp_roles;
         if (!empty($user->roles)){
@@ -86,36 +84,34 @@ foreach ( $users as $user ) {
                 echo $wp_roles->roles[ $role ]['name'] . ' ';}
 
                 };?></span></h2>
-        <p class="person-card__description"><?php echo esc_html($user->description);?></p>
-    </div>
+	<p class="person-card__description"><?php echo esc_html($user->description);?></p>
+
 </article>
 <?php '</li>';
-?></div><?php }
+ }
 echo '</ul>';
 ?>
-</dd>
-</dl>
+
+<!--END Student Affairs-->
 </div>
-<!--End Staff IT-->
-<!--Staff Officers-->
-<div class="accordion accordion--card-content accordion--mobile-only">
-<dl>
-<button class="accordion__title" aria-expanded="false">
-<dt>Staff - Officers</dt>
-</button>
-<dd class="accordion__content">
+
+<br>
+<!--Fund Managers-->
+<h2 class="yellow-side-header"> Fund Managers </h2>
+<div class= "role-listing">
 <?php
 
 $args= array(
-        'role' => 'staff_officer',
+        'role' => 'staff_fund_managers',
         'orderby'=> 'user_nicename',
         'order' => 'ASC'
 );
-$users=get_users($args);
-echo '<ul style="list-style:none;">';
+$users=get_users($args);?>
+<?php
+echo '<ul style="list-style:none; width:180%;">';
 foreach ( $users as $user ) {
         wp_get_current_user();
-?><div class="col span_5_of_12"> <?php  echo '<li>'?>
+ echo '<li style= "width:33%; height:500px; display:inline-block; float:left;">'?>
 <article class="person-card-grey">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
@@ -129,16 +125,136 @@ foreach ( $users as $user ) {
 
                 };?></span></h2>
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
-    </div>
 </article>
 <?php '</li>';
-?></div><?php }
+ }
 echo '</ul>';
 ?>
-</dd>
-</dl>
+
+<!--END Fund Managers-->
 </div>
-<!--End Staff Officers-->
+
+<br>
+<!--Academic Personnel-->
+<h2 class="yellow-side-header"> Academic Personnel </h2>
+<div class= "role-listing">
+<?php
+
+$args= array(
+        'role' => 'staff_academic_personnel',
+        'orderby'=> 'user_nicename',
+        'order' => 'ASC'
+);
+$users=get_users($args);?>
+<?php
+echo '<ul style="list-style:none;  width:180%;">';
+foreach ( $users as $user ) {
+        wp_get_current_user();
+ echo '<li style= "width:33%; height:500px; display:inline-block; float:left;">'?>
+<article class="person-card-grey">
+
+<img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
+<div class="person-card__info-wrapper">
+<h1 class="person-card__name"><a style = "text-decoration: none;"  href="<?php echo get_author_posts_url($user->ID);?>"><span><?php echo esc_html($user->display_name);?></span></a></h1>
+<h2 class="person-card__department"><span><?php
+        global $wp_roles;
+        if (!empty($user->roles)){
+                foreach ($user->roles as $role){
+                echo $wp_roles->roles[ $role ]['name'] . ' ';}
+
+                };?></span></h2>
+        <p class="person-card__description"><?php echo esc_html($user->description);?></p>
+</article>
+<?php '</li>';
+ }
+echo '</ul>';
+?>
+
+<!--END Academic Personnel-->
+</div>
+
+<br>
+<!--Office Coordinator-->
+<h2 class="yellow-side-header"> Office Coordinator </h2>
+<div class= "role-listing">
+<?php
+
+$args= array(
+        'role' => 'staff_office_coordinator',
+        'orderby'=> 'user_nicename',
+        'order' => 'ASC'
+);
+$users=get_users($args);?>
+<?php
+echo '<ul style="list-style:none; width:180%;">';
+foreach ( $users as $user ) {
+        wp_get_current_user();
+ echo '<li style= "width:33%; height:500px; display:inline-block; float:left;">'?>
+<article class="person-card-grey">
+
+<img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot
+of Faculty Member">
+<div class="person-card__info-wrapper">
+<h1 class="person-card__name"><a style = "text-decoration: none;"  href="<?php echo get_author_posts_url($user->ID);?>"><span><?php echo esc_html($user->display_name);?></span></a></h1>
+<h2 class="person-card__department"><span><?php
+        global $wp_roles;
+        if (!empty($user->roles)){
+                foreach ($user->roles as $role){
+                echo $wp_roles->roles[ $role ]['name'] . ' ';}
+
+                };?></span></h2>
+        <p class="person-card__description"><?php echo esc_html($user->description);?></p>
+</article>
+<?php '</li>';
+}
+echo '</ul>';
+?>
+
+<!--END Office Coordinator-->
+</div>
+
+<br>
+<!--IT-->
+<h2 class="yellow-side-header"> IT </h2>
+<div class= "role-listing">
+<?php
+
+$args= array(
+        'role' => 'staff_IT',
+        'orderby'=> 'user_nicename',
+        'order' => 'ASC'
+);
+$users=get_users($args);?>
+<?php
+echo '<ul style="list-style:none; width:180%;">';
+foreach ( $users as $user ) {
+	wp_get_current_user();
+
+echo '<li style= "width:33%; height:500px; display:inline-block; float:left;">';?>
+<article class="person-card-grey">
+
+<img class="person-card__image"  src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot
+of Faculty Member">
+<div class="person-card__info-wrapper">
+<h1 class="person-card__name"><a style = "text-decoration: none;"  href="<?php echo get_author_posts_url($user->ID);?>"><span><?php echo esc_html($user->display_name);?></span></a></h1>
+<h2 class="person-card__department"><span><?php
+        global $wp_roles;
+        if (!empty($user->roles)){
+                foreach ($user->roles as $role){
+                echo $wp_roles->roles[ $role ]['name'] . ' ';}
+
+                };?></span></h2>
+        <p class="person-card__description"><?php echo esc_html($user->description);?></p>
+</article>
+<?php '</li>';
+}
+echo '</ul>';
+?>
+
+<!--END IT-->
+</div>
+<br>
+</div>
 </div>
 </main>
 <?php get_footer();?>

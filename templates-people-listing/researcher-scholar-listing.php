@@ -6,20 +6,18 @@
 <div class = "ucla campus">
 <div class= "col span_12_of_12">
 <br>
-<h2 class="yellow-side-header">Researcher/Scholar</h2><br><br>
+<h1>Researcher/Scholar</h1><br><br>
 <p class="lead"> Introductory description of the Researcher/Scholar </p>
 <p>Below you'll find a listing of the Researcher and/or Scholar Member categorized by area of expertise</p>
 </div>
 </div>
 </header>
 <div class = "ucla campus">
-<!--RS  General-->
-<div class="accordion accordion--card-content accordion--mobile-only">
-<dl>
-<button class="accordion__title" aria-expanded="false">
-<dt>Researcher/Scholar</dt>
-</button>
-<dd class="accordion__content">
+<!--General-->
+
+<div class = "role-listing-wrapper">
+<h2 class="yellow-side-header"> AOS Researcher </h2>
+<div class= "role-listing">
 <?php
 
 $args= array(
@@ -27,11 +25,12 @@ $args= array(
         'orderby'=> 'user_nicename',
         'order' => 'ASC'
 );
-$users=get_users($args);
-echo '<ul style="list-style:none;">';
+$users=get_users($args);?>
+<?php
+echo '<ul style="list-style:none; width:180%;">';
 foreach ( $users as $user ) {
         wp_get_current_user();
-?><div class="col span_5_of_12"> <?php  echo '<li>'?>
+  echo '<li style= "width:33%; height:500px; display:inline-block; float:left;">'?>
 <article class="person-card-grey">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
@@ -45,16 +44,20 @@ foreach ( $users as $user ) {
 
                 };?></span></h2>
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
-    </div>
+
 </article>
 <?php '</li>';
-?></div><?php }
+ }
 echo '</ul>';
 ?>
-</dd>
-</dl>
+
+
+<!--END-->
 </div>
-<!--End RS General-->
+
+<br>
+
+</div>
 </div>
 </main>
 <?php get_footer();?>
