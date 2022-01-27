@@ -15,9 +15,8 @@
 <div class = "ucla campus">
 <!--CAO-->
 
-<div class = "role-listing-wrapper">
 <h2 class="yellow-side-header"> CAO </h2>
-<div class= "role-listing">
+<div class= "role-listing-wrapper">
 <?php
 
 $args= array(
@@ -27,10 +26,12 @@ $args= array(
 );
 $users=get_users($args);?>
 <?php
-echo '<ul style="list-style:none; width:180%;">';
+echo '<ul style="list-style:none;">';
+?><div class= "role-listing-container"><?php
 foreach ( $users as $user ) {
-        wp_get_current_user();
-  echo '<li style= "width:33%; height:500px; display:inline-block; float:left;">'?>
+	wp_get_current_user();
+	?><div class="role-listing-item"><?php
+  echo '<li>'?>
 <article class="person-card-grey">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
@@ -46,19 +47,19 @@ foreach ( $users as $user ) {
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
     
 </article>
-<?php '</li>';
- }
+<?php echo '</li>';
+?></div><?php
+}
+?></div><?php
 echo '</ul>';
 ?>
 
 
 <!--END-->
-</div>
-
 <br>
 <!--Student Affairs-->
 <h2 class="yellow-side-header"> Student Affairs </h2>
-<div class= "role-listing">
+<div class= "role-listing-wrapper">
 <?php
 
 $args= array(
@@ -68,10 +69,12 @@ $args= array(
 );
 $users=get_users($args);?>
 <?php
-echo '<ul style="list-style:none; width:180%;">';
+echo '<ul style="list-style:none; ">';
+?><div class= "role-listing-container"><?php
 foreach ( $users as $user ) {
-        wp_get_current_user();
- echo '<li style= "width:33%; height:500px; display:inline-block; float:left;">'?>
+	wp_get_current_user();
+	?>	<div class= "role-listing-item"><?php
+ echo '<li>'?>
 <article class="person-card-grey">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
@@ -87,18 +90,20 @@ foreach ( $users as $user ) {
 	<p class="person-card__description"><?php echo esc_html($user->description);?></p>
 
 </article>
-<?php '</li>';
- }
+<?php echo '</li>'; 
+?></div><?php
+}
+?></div><?php
 echo '</ul>';
 ?>
 
 <!--END Student Affairs-->
-</div>
+
 
 <br>
 <!--Fund Managers-->
 <h2 class="yellow-side-header"> Fund Managers </h2>
-<div class= "role-listing">
+<div class= "role-listing-wrapper">
 <?php
 
 $args= array(
@@ -108,10 +113,12 @@ $args= array(
 );
 $users=get_users($args);?>
 <?php
-echo '<ul style="list-style:none; width:180%;">';
+echo '<ul style="list-style:none; ">';
+?><div class= "role-listing-container"><?php
 foreach ( $users as $user ) {
-        wp_get_current_user();
- echo '<li style= "width:33%; height:500px; display:inline-block; float:left;">'?>
+	wp_get_current_user();
+	 ?>      <div class= "role-listing-item"><?php
+ echo '<li>'?>
 <article class="person-card-grey">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
@@ -126,8 +133,10 @@ foreach ( $users as $user ) {
                 };?></span></h2>
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
 </article>
-<?php '</li>';
- }
+<?php echo '</li>';
+?> </div><?php
+}
+?> </div><?php
 echo '</ul>';
 ?>
 
@@ -137,7 +146,7 @@ echo '</ul>';
 <br>
 <!--Academic Personnel-->
 <h2 class="yellow-side-header"> Academic Personnel </h2>
-<div class= "role-listing">
+<div class= "role-listing-wrapper">
 <?php
 
 $args= array(
@@ -147,10 +156,12 @@ $args= array(
 );
 $users=get_users($args);?>
 <?php
-echo '<ul style="list-style:none;  width:180%;">';
+echo '<ul style="list-style:none;">';
+?><div class= "role-listing-container"><?php
 foreach ( $users as $user ) {
-        wp_get_current_user();
- echo '<li style= "width:33%; height:500px; display:inline-block; float:left;">'?>
+	wp_get_current_user();
+	 ?>      <div class= "role-listing-item"><?php
+ echo '<li>'?>
 <article class="person-card-grey">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
@@ -165,8 +176,10 @@ foreach ( $users as $user ) {
                 };?></span></h2>
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
 </article>
-<?php '</li>';
- }
+<?php echo '</li>';
+?> </div><?php
+}
+?> </div><?php
 echo '</ul>';
 ?>
 
@@ -176,7 +189,7 @@ echo '</ul>';
 <br>
 <!--Office Coordinator-->
 <h2 class="yellow-side-header"> Office Coordinator </h2>
-<div class= "role-listing">
+<div class= "role-listing-wrapper">
 <?php
 
 $args= array(
@@ -186,10 +199,12 @@ $args= array(
 );
 $users=get_users($args);?>
 <?php
-echo '<ul style="list-style:none; width:180%;">';
+echo '<ul style="list-style:none;">';
+?><div class= "role-listing-container"><?php
 foreach ( $users as $user ) {
-        wp_get_current_user();
- echo '<li style= "width:33%; height:500px; display:inline-block; float:left;">'?>
+	wp_get_current_user();
+	 ?>      <div class= "role-listing-item"><?php
+ echo '<li>'?>
 <article class="person-card-grey">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot
@@ -205,8 +220,10 @@ of Faculty Member">
                 };?></span></h2>
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
 </article>
-<?php '</li>';
+<?php echo '</li>';
+?> </div><?php
 }
+?> </div><?php
 echo '</ul>';
 ?>
 
@@ -216,7 +233,7 @@ echo '</ul>';
 <br>
 <!--IT-->
 <h2 class="yellow-side-header"> IT </h2>
-<div class= "role-listing">
+<div class= "role-listing-wrapper">
 <?php
 
 $args= array(
@@ -226,11 +243,12 @@ $args= array(
 );
 $users=get_users($args);?>
 <?php
-echo '<ul style="list-style:none; width:180%;">';
+echo '<ul style="list-style:none; ">';
+?><div class= "role-listing-container"><?php
 foreach ( $users as $user ) {
 	wp_get_current_user();
-
-echo '<li style= "width:33%; height:500px; display:inline-block; float:left;">';?>
+ ?>      <div class= "role-listing-item"><?php
+echo '<li>';?>
 <article class="person-card-grey">
 
 <img class="person-card__image"  src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot
@@ -246,14 +264,16 @@ of Faculty Member">
                 };?></span></h2>
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
 </article>
-<?php '</li>';
+<?php echo '</li>';
+?> </div><?php
 }
+?> </div><?php
 echo '</ul>';
 ?>
-
-<!--END IT-->
 </div>
-<br>
+<!--END IT-->
+
+
 </div>
 </div>
 </main>
