@@ -1,10 +1,31 @@
 /*listing*/
-.role-listing{
-        display:block;
-}
-
 .role-listing-wrapper{
 	display:block;
+}
+.role-listing-container{
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(3,auto);
+	grid-auto-rows: 500px;
+}
+
+@media(max-width: 1000px){
+		.role-listing-container{
+			grid-template-columns: repeat(2,auto);
+
+		}
+
+}
+
+@media(max-width: 600px){
+	.role-listing-container{
+		grid-template-columns: repeat(1,auto);
+	}
+}
+
+
+.role-listing-item{
+		place-self: center;
 }
 
 
