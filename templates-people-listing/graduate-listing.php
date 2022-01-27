@@ -13,11 +13,9 @@
 </div>
 </header>
 <div class = "ucla campus">
-<!--General-->
-
-<div class = "role-listing-wrapper">
+<!--AOS Graduate-->
 <h2 class="yellow-side-header"> AOS Graduate </h2>
-<div class= "role-listing">
+<div class= "role-listing-wrapper">
 <?php
 
 $args= array(
@@ -27,13 +25,16 @@ $args= array(
 );
 $users=get_users($args);?>
 <?php
-echo '<ul style="list-style:none; width:180%;">';
+echo '<ul style="list-style:none; ">';
+?><div class= "role-listing-container"><?php
 foreach ( $users as $user ) {
         wp_get_current_user();
-  echo '<li style= "width:33%; height:500px; display:inline-block; float:left;">'?>
+ ?>      <div class= "role-listing-item"><?php
+echo '<li>';?>
 <article class="person-card-grey">
 
-<img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
+<img class="person-card__image"  src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot
+of Faculty Member">
 <div class="person-card__info-wrapper">
 <h1 class="person-card__name"><a style = "text-decoration: none;"  href="<?php echo get_author_posts_url($user->ID);?>"><span><?php echo esc_html($user->display_name);?></span></a></h1>
 <h2 class="person-card__department"><span><?php
@@ -44,21 +45,17 @@ foreach ( $users as $user ) {
 
                 };?></span></h2>
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
-
-</article>
-<?php '</li>';
- }
+</div></article>
+<?php echo '</li>';
+?> </div><?php
+}
+?> </div><?php
 echo '</ul>';
 ?>
-
-
-<!--END-->
 </div>
+<!--END -->
 
-<br>
 
-
-</div>
 </div>
 </main>
 <?php get_footer();?>

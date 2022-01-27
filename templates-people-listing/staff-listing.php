@@ -45,7 +45,7 @@ foreach ( $users as $user ) {
 
                 };?></span></h2>
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
-    
+    </div>
 </article>
 <?php echo '</li>';
 ?></div><?php
@@ -53,7 +53,7 @@ foreach ( $users as $user ) {
 ?></div><?php
 echo '</ul>';
 ?>
-
+</div>
 
 <!--END-->
 <br>
@@ -88,7 +88,7 @@ foreach ( $users as $user ) {
 
                 };?></span></h2>
 	<p class="person-card__description"><?php echo esc_html($user->description);?></p>
-
+</div>
 </article>
 <?php echo '</li>'; 
 ?></div><?php
@@ -98,7 +98,7 @@ echo '</ul>';
 ?>
 
 <!--END Student Affairs-->
-
+</div>
 
 <br>
 <!--Fund Managers-->
@@ -132,6 +132,7 @@ foreach ( $users as $user ) {
 
                 };?></span></h2>
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
+</div>
 </article>
 <?php echo '</li>';
 ?> </div><?php
@@ -175,7 +176,7 @@ foreach ( $users as $user ) {
 
                 };?></span></h2>
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
-</article>
+</div></article>
 <?php echo '</li>';
 ?> </div><?php
 }
@@ -219,7 +220,7 @@ of Faculty Member">
 
                 };?></span></h2>
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
-</article>
+</div></article>
 <?php echo '</li>';
 ?> </div><?php
 }
@@ -263,7 +264,7 @@ of Faculty Member">
 
                 };?></span></h2>
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
-</article>
+</div></article>
 <?php echo '</li>';
 ?> </div><?php
 }
