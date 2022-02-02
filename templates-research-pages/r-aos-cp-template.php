@@ -17,7 +17,7 @@
 
       </div>
 <?php
-    $members_cp = array( 'Core Faculty' => array( 'faculty_full','faculty_associate','faculty_assistant', 'distinguished_professor'  ),
+    $members_cp = array( 'Core Faculty' => array( 'faculty_full_professor','faculty_associate','faculty_assistant', 'distinguished_professor'  ),
                     'Affiliated Faculty' => array( 'faculty_affiliated','faculty_adjunct','faculty_emeritus' ),
                     'Research/Scholar' => array( 'researcher_scholar' ),
                     'Graduate students' => array( 'graduate_master', 'graduate_phd','graduate_xep' ) );
