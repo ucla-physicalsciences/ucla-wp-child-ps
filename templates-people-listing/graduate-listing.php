@@ -20,7 +20,7 @@
 
 $args= array(
         'role' => 'graduate_student',
-        'orderby'=> 'user_nicename',
+        'orderby'=> 'display_name',
         'order' => 'ASC'
 );
 $users=get_users($args);?>

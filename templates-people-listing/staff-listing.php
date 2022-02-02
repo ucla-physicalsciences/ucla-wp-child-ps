@@ -21,7 +21,7 @@
 
 $args= array(
         'role' => 'staff_cao',
-        'orderby'=> 'user_nicename',
+        'orderby'=> 'display_name',
         'order' => 'ASC'
 );
 $users=get_users($args);?>
@@ -64,7 +64,7 @@ echo '</ul>';
 
 $args= array(
         'role' => 'staff_student_affairs',
-        'orderby'=> 'user_nicename',
+        'orderby'=> 'display_name',
         'order' => 'ASC'
 );
 $users=get_users($args);?>
@@ -108,7 +108,7 @@ echo '</ul>';
 
 $args= array(
         'role' => 'staff_fund_managers',
-        'orderby'=> 'user_nicename',
+        'orderby'=> 'display_name',
         'order' => 'ASC'
 );
 $users=get_users($args);?>
@@ -152,7 +152,7 @@ echo '</ul>';
 
 $args= array(
         'role' => 'staff_academic_personnel',
-        'orderby'=> 'user_nicename',
+        'orderby'=> 'display_name',
         'order' => 'ASC'
 );
 $users=get_users($args);?>
@@ -195,7 +195,7 @@ echo '</ul>';
 
 $args= array(
         'role' => 'staff_office_coordinator',
-        'orderby'=> 'user_nicename',
+        'orderby'=> 'display_name',
         'order' => 'ASC'
 );
 $users=get_users($args);?>
@@ -239,7 +239,7 @@ echo '</ul>';
 
 $args= array(
         'role' => 'staff_IT',
-        'orderby'=> 'user_nicename',
+        'orderby'=> 'display_name',
         'order' => 'ASC'
 );
 $users=get_users($args);?>
