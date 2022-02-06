@@ -242,11 +242,18 @@ add_role('faculty_emeritus_professor','Emeritus Professor',get_role('author')->c
 //Graduate
 add_role('graduate_student','Graduate Student',get_role('contributor')->capabilities);
 
-//Researcher
+//Postdocs
 add_role('postdoctoral_scholar','Postdoctoral Scholar',get_role('author')->capabilities);
-add_role('researcher_assistant','Researcher Assistant Scientist', get_role('contributor')->capabilities);
-add_role('researcher_associate','Researcher Associate Scientist', get_role('contributor')->capabilities);
-add_role('researcher_full','Full Researcher Scientist', get_role('contributor')->capabilities);
+
+//Project Scientist
+add_role('project_scientist_assistant','Assistant Project Scientist', get_role('contributor')->capabilities);
+add_role('project_scientist_associate','Associate Project Scientist', get_role('contributor')->capabilities);
+add_role('project_scientist_full','Project Scientist', get_role('contributor')->capabilities);
+
+//Research Scientist
+add_role('research_scientist_assistant','Assistant Research Scientist', get_role('contributor')->capabilities);
+add_role('research_scientist_associate','Associate Research Scientist', get_role('contributor')->capabilities);
+add_role('research_scientist_full','Research Scientist', get_role('contributor')->capabilities);
 //Staff
 add_role('staff_cao','CAO',get_role('contributor')->capabilities);
 add_role('staff_student_affairs','Student Affairs',get_role('contributor')->capabilities);
