@@ -2,6 +2,9 @@
 // Load the Parent and Child Stylesheets
 add_action( 'wp_enqueue_scripts', 'ucla_theme_enqueue_styles' );
 function ucla_theme_enqueue_styles() {
+//    wp_dequeue_style('ucla-style');
+//    wp_deregister_style('ucla-style');
+    wp_enqueue_style( 'strat_comm_fixes', 'https://www.ucla.edu/css/app.css', null, null, true);
     wp_enqueue_style( 'child-style', get_stylesheet_uri(),
         array( 'ucla-style' ),
         wp_get_theme()->get('Version') // this only works if you have Version in the style header
@@ -233,13 +236,16 @@ add_role('faculty_adjunct_professor','Adjunct Professor',get_role('author')->cap
 add_role('faculty_assistant_professor','Assistant Professor',get_role('author')->capabilities);
 add_role('faculty_associate_professor','Associate Professor',get_role('author')->capabilities);
 add_role('faculty_full_professor','Full Professor',get_role('author')->capabilities);
+add_role('faculty_affiliated_professor','Affiliated Professor',get_role('author')->capabilities);
+add_role('faculty_emeritus_professor','Emeritus Professor',get_role('author')->capabilities);
 
 //Graduate
 add_role('graduate_student','Graduate Student',get_role('contributor')->capabilities);
 
 //Researcher
 add_role('researcher_scholar','Researcher/Scholar',get_role('author')->capabilities);
-
+add_role('researcher_assistant','Researcher Assistant', get_role('contributor')->capabilities);
+add_role('researcher_associate','Researcher Associate', get_role('contributor')->capabilities);
 //Staff
 add_role('staff_cao','CAO',get_role('contributor')->capabilities);
 add_role('staff_student_affairs','Student Affairs',get_role('contributor')->capabilities);
@@ -292,11 +298,11 @@ function register_research_field_user_taxonomy(){
 					'edit_terms'   => 'edit_users',
 					'delete_terms' => 'edit_users',
 					'assign_terms' => 'read'),
-				'update_count_callback'=>'my_update_research_field_count'
+				'update_count_callback'=>'my_updated_tax_count'
 		)		);
 }
-/*updating the 'research field' taxonomy count*/
-function my_update_research_field_count($terms,$taxonomy){
+/*updating the  taxonomy count*/
+function my_updated_tax_count($terms,$taxonomy){
 	global $wpdb;
 	foreach ( (array) $terms as $term ) {
 	$count= $wpdb->get_var($wpdb->prepare( "SELECT COUNT(*) FROM $wpdb->term_relationships WHERE term_taxonomy_id = %d", $term ) );
@@ -330,6 +336,67 @@ add_action('manage_research_field_custom_column','manage_research_field_column',
 function manage_research_field_column($display,$column,$term_id){
 	if ('users'===$column){
 		$term=get_term($term_id,'research_field');
+		echo $term->count;
+	}
+}
+
+
+/*user taxonomy to handle main categories*/
+function register_member_category_taxonomy(){
+	register_taxonomy(
+		'member_category',
+		'user',
+		array(
+			'public'=>true,
+			'labels'=>array(
+				'name'=>__('Member Categories'),
+				'singular_name'=>__('Member Category'),
+				'menu_name'=>__('Member Categories'),
+				'search_items'=>__('Search Member Categories'),
+				'all_items'=>__('All Member Categories'),
+				'edit_items'=>__('Edit Member Category'),
+				'update_item'=>__('Update Member Category'),
+				'add_new_item'=>__('Add New Member Category'),
+				'new_item_name'=>__('New Member Category Name'),
+				'separate_items_with_commas'=>__('Separate Member Categories with commas'),
+				'add_or_remove_items'=>__('Add or remove Member Categories'),),
+				'rewrite'=>array(
+					'with_front'=>true,
+					'slug'=>'author/member_category'),
+				'capabilities'=>array(
+					'manage_terms' => 'edit_users',
+					'edit_terms'   => 'edit_users',
+					'delete_terms' => 'edit_users',
+					'assign_terms' => 'read'),
+				'update_count_callback'=>'my_updated_tax_count'
+		)		);
+}
+
+/*add the research fields taxonomy page in the admin*/
+add_action('admin_menu','add_member_category_admin_page');
+/*creating the manage terms page for research fields taxonomy*/
+function add_member_category_admin_page(){
+	$tax=get_taxonomy('member_category');
+	add_users_page(
+		esc_attr( $tax->labels->menu_name ),
+		esc_attr( $tax->labels->menu_name ),
+		$tax->cap->manage_terms,
+		'edit-tags.php?taxonomy=' . $tax->name
+	);
+}
+add_filter('manage_edit-member_category_columns','manage_member_category_user_column' );
+function manage_member_category_user_column($columns){
+	unset( $columns['posts'] );
+
+	$columns['users'] = __( 'Users' );
+
+	return $columns;
+}
+
+add_action('manage_member_catgegory_custom_column','manage_member_category_column',10,3);
+function manage_member_category_column($display,$column,$term_id){
+	if ('users'===$column){
+		$term=get_term($term_id,'member_category');
 		echo $term->count;
 	}
 }

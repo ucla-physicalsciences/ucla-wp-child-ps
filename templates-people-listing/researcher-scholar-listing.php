@@ -13,28 +13,31 @@
 </div>
 </header>
 <div class = "ucla campus">
-<!--AOS Researcher-->
-<h2 class="yellow-side-header"> AOS Researcher</h2>
-<div class= "role-listing-wrapper">
+<!--Researcher/Scholar :Researcher/Scholar, Assistant, Associate-->
 <?php
+$members = array( 'Researcher/Scholar' => array('researcher_scholar', 'researcher_associate', 'researcher_assistant' ));
 
-$args= array(
-        'role' => 'researcher_scholar',
-        'orderby'=> 'display_name',
+foreach( $members as $group_members => $group_member_roles ) {
+      $args = array(
+        'role__in' => $group_member_roles,
+        'orderby' => 'display_name',
         'order' => 'ASC'
 );
-$users=get_users($args);?>
+
+      $user_query = new WP_User_Query($args);
+      if ( ! empty( $user_query->results ) ) { 
+?>
+	<h2 class="yellow-side-header"><?php echo $group_members?></h2>
 <?php
-echo '<ul style="list-style:none; ">';
+echo '<ul style="list-style:none;">';
 ?><div class= "role-listing-container"><?php
-foreach ( $users as $user ) {
+foreach ( $user_query->results as $user ) {
         wp_get_current_user();
- ?>      <div class= "role-listing-item"><?php
-echo '<li>';?>
+        ?><div class="role-listing-item"><?php
+  echo '<li>'?>
 <article class="person-card-grey">
 
-<img class="person-card__image"  src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot
-of Faculty Member">
+<img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
 <div class="person-card__info-wrapper">
 <h1 class="person-card__name"><a style = "text-decoration: none;"  href="<?php echo get_author_posts_url($user->ID);?>"><span><?php echo esc_html($user->display_name);?></span></a></h1>
 <h2 class="person-card__department"><span><?php
@@ -45,16 +48,15 @@ of Faculty Member">
 
                 };?></span></h2>
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
-</div></article>
-<?php echo '</li>';
-?> </div><?php
-}
-?> </div><?php
-echo '</ul>';
-?>
 </div>
-<!--END-->
-
+</article>
+<?php echo '</li>';
+?></div><?php
+}
+?></div><?php
+echo '</ul>';
+      }}?>
+<!--END Core-->
 
 </div>
 </main>
