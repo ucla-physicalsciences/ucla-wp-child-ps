@@ -15,7 +15,7 @@
 <div class = "ucla campus">
 <!--Researcher/Scholar :Researcher/Scholar, Assistant, Associate-->
 <?php
-$members = array( 'Researcher/Scholar' => array('researcher_scholar', 'researcher_associate', 'researcher_assistant' ));
+$members = array( 'Researcher/Scholar' => array('researcher_scholar','researcher_full', 'researcher_associate', 'researcher_assistant' ));
 
 foreach( $members as $group_members => $group_member_roles ) {
       $args = array(
