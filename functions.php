@@ -243,9 +243,10 @@ add_role('faculty_emeritus_professor','Emeritus Professor',get_role('author')->c
 add_role('graduate_student','Graduate Student',get_role('contributor')->capabilities);
 
 //Researcher
-add_role('researcher_scholar','Researcher/Scholar',get_role('author')->capabilities);
-add_role('researcher_assistant','Researcher Assistant', get_role('contributor')->capabilities);
-add_role('researcher_associate','Researcher Associate', get_role('contributor')->capabilities);
+add_role('postdoctoral_scholar','Postdoctoral Scholar',get_role('author')->capabilities);
+add_role('researcher_assistant','Researcher Assistant Scientist', get_role('contributor')->capabilities);
+add_role('researcher_associate','Researcher Associate Scientist', get_role('contributor')->capabilities);
+add_role('researcher_full','Full Researcher Scientist', get_role('contributor')->capabilities);
 //Staff
 add_role('staff_cao','CAO',get_role('contributor')->capabilities);
 add_role('staff_student_affairs','Student Affairs',get_role('contributor')->capabilities);
