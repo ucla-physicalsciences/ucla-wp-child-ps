@@ -3,15 +3,8 @@
 <?php get_header();?>
 <main id="main">
 <header class="header">
-<div class = "ucla campus">
-<div class= "col span_12_of_12">
-<br>
-<h1>Researcher/Scholar</h1><br><br>
-<p class="lead"> Introductory description of the Researcher/Scholar </p>
-<p>Below you'll find a listing of the Researcher and/or Scholar Member categorized by area of expertise</p>
-</div>
-</div>
 </header>
+<br>
 <div class = "ucla campus">
 <!--Researcher/Scholar :Researcher/Scholar, Assistant, Associate-->
 <?php

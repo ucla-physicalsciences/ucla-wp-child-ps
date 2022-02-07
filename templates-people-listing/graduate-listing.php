@@ -3,18 +3,11 @@
 <?php get_header();?>
 <main id="main">
 <header class="header">
-<div class = "ucla campus">
-<div class= "col span_12_of_12">
-<br>
-<h1>Graduate Students</h1><br><br>
-<p class="lead"> Introductory description of the Graduate Students </p>
-<p>Below you'll find a listing of the Graduate Student Members categorized by degree pursued</p>
-</div>
-</div>
 </header>
 <div class = "ucla campus">
 <!--AOS Graduate-->
-<h2 class="yellow-side-header"> AOS Graduate </h2>
+<br/>
+<h2 class="yellow-side-header">Graduate Students</h2>
 <div class= "role-listing-wrapper">
 <?php
 
@@ -24,13 +17,10 @@ $args= array(
         'order' => 'ASC'
 );
 $users=get_users($args);?>
-<?php
-echo '<ul style="list-style:none; ">';
-?><div class= "role-listing-container"><?php
+<div class= "role-listing-container"><?php
 foreach ( $users as $user ) {
         wp_get_current_user();
- ?>      <div class= "role-listing-item"><?php
-echo '<li>';?>
+ ?>      <div class= "role-listing-item">
 <article class="person-card-grey">
 
 <img class="person-card__image"  src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot
@@ -46,11 +36,9 @@ of Faculty Member">
                 };?></span></h2>
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
 </div></article>
-<?php echo '</li>';
-?> </div><?php
+</div><?php
 }
-?> </div><?php
-echo '</ul>';
+echo '</div>';
 ?>
 </div>
 <!--END -->
