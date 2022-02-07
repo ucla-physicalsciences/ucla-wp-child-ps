@@ -5,7 +5,7 @@
 .role-listing-container{
 	display: grid;
 	width: 100%;
-	grid-template-columns: repeat(3,auto);
+	grid-template-columns: repeat(3,auto); 
 	grid-auto-rows: 500px;
 }
 

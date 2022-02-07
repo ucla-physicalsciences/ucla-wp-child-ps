@@ -15,7 +15,7 @@
 <div class = "ucla campus">
 <!--Researcher/Scholar :Researcher/Scholar, Assistant, Associate-->
 <?php
-$members = array( 'Project & Research Scientists and Postdoctoral Scholar' => array('postdoctoral_scholar','research_scientist_full', 'research_scientist_associate', 'research_scientist_assistant', 'project_scientist_assistant', 'project_scientist_associate','project_scientist_full' ));
+$members = array( 'Postdoctoral Scholars and Project & Research Scientists' => array('postdoctoral_scholar','research_scientist_full', 'research_scientist_associate', 'research_scientist_assistant', 'project_scientist_assistant', 'project_scientist_associate','project_scientist_full' ));
 
 foreach( $members as $group_members => $group_member_roles ) {
       $args = array(
@@ -28,13 +28,10 @@ foreach( $members as $group_members => $group_member_roles ) {
       if ( ! empty( $user_query->results ) ) { 
 ?>
 	<h2 class="yellow-side-header"><?php echo $group_members?></h2>
-<?php
-echo '<ul style="list-style:none;">';
-?><div class= "role-listing-container"><?php
+<div class= "role-listing-container"><?php
 foreach ( $user_query->results as $user ) {
         wp_get_current_user();
-        ?><div class="role-listing-item"><?php
-  echo '<li>'?>
+        ?><div class="role-listing-item">
 <article class="person-card-grey">
 
 <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
@@ -50,11 +47,9 @@ foreach ( $user_query->results as $user ) {
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
 </div>
 </article>
-<?php echo '</li>';
-?></div><?php
+</div><?php
 }
 ?></div><?php
-echo '</ul>';
       }}?>
 <!--END Core-->
 
