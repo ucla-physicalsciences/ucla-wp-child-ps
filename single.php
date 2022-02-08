@@ -1,46 +1,80 @@
-<?php
-
-$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
-
-?>
 
 <?php get_header(); ?>
 
 <main id="main">
-  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-    <header class="header" <?php if ( has_post_thumbnail() ) { ?> style="background-image: url(<?php echo $thumbnail[0]; ?>);" <?php } ?>>
+  
+    <header class="header">
       <div class="ucla campus">
         <div class="col span_12_of_12">
-          <div class="breadcrumb"><?php get_breadcrumb(); ?></div>
-          <h1 class="entry-title"><?php the_title(); ?></h1> <?php edit_post_link(); ?>
-        </div>
+	<br>
+
+<div class="story__featured">
+    <article class="story__featured-card">
+      <a href="#" tabindex="-1">
+      <img class="story__featured-image" src="<?php echo get_the_post_thumbnail( get_the_ID(), 'large' );?>"></a>
+ <div class="story__featured-content">
+        <h3 class="story__featured-title"><?php echo get_the_title( ); ?></h3>
       </div>
-    </header>
-
-    <div class="ucla campus">
-
-      <div class="col span_9_of_12">
-        <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
-        <p><?php $author_id = intval( get_query_var( 'author' ) ); echo get_the_author_meta( 'user_login', $author_id ); ?></p>
-        <?php the_content(); ?>
-
-        <?php
-            /** @var string|false|WP_Error $tag_list */
-            $tag_list = get_the_tag_list( ' ', ' ' );
-
-            if ( $tag_list && ! is_wp_error( $tag_list ) ) {
-                echo $tag_list;
-            }
-        ?>
+    </article>
+  </div>
+</section>
+</div>
+</div>
+</header>
+<br>
+<!--Display Author + Date info-->
+<?php
+$author_id = get_post_field ('post_author', $cause_id);
+$display_name = get_the_author_meta( 'display_name' , $author_id );
+?>
+<div class = "ucla campus">
+<div class= "col span_12_of_12"> <!-- if want more image : 8_of_12-->
+<h5><?php echo $display_name;?> | <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time> </h5>
+<p><?php the_content(); ?> </p>
+</div>
+<!--<div class= "col span_3_of_12">
+<h2 class="yellow-side-header">More Images</h2>
+<br><br>
+</div>-->
+</div> 
+    <div  class="ucla campus">
+<div class="col span_12_of_12">
+<?php
+global $post;
+$cat= get_the_category($post->ID);
+$args = array (
+        'cat'=> $cat[0]->name,
+                'posts_per_page' => 12,
+                'orderby'       => 'date',
+                );
+$the_query = new WP_Query( $args );?>
+<?php if ( $the_query->have_posts() ) : ?>
+	<h2 class="yellow-side-header">More AOS <?php echo $cat[0]->name?></h2>
+<br>
+<section class="quarterly-updates-archive">
+<ul class="quarterly-listing row">
+<?php
+    while ( $the_query->have_posts() ) : $the_query->the_post();?>
+    <li class="quarterly-listing__item col-12 col-md-6 col-lg-12">
+                            <div class="quarterly-listing__container">
+				<div class="quarterly-listing__image-container">
+<a href="<?php echo the_permalink(); ?>">
+<img class="quarterly-listing__image lazyload" src=<?php echo get_the_post_thumbnail( get_the_ID() );?> /></a>
+   </div>
+ <div class="quarterly-listing__content">
+ <a href="<?php echo the_permalink(); ?>" class="quarterly-listing__date">
+    <?php echo get_the_date();?>
+      <span class="quarterly-listing__title">
+       <?php echo the_title();?></span></div>
       </div>
+    </li>
+        <?php endwhile; ?>
 
-    <?php endwhile; endif; ?>
+        <?php wp_reset_postdata(); ?>
+</ul></section>
+<?php endif; ?>
 
-    <div class="col span_3_of_12">
-      <?php get_sidebar(); ?>
-    </div>
-
+</div>
   </div>
 
 </main>
