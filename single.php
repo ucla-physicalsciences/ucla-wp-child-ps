@@ -41,7 +41,6 @@ $display_name = get_the_author_meta( 'display_name' , $author_id );
 </div>-->
 </div> 
     <div  class="ucla campus">
-<div class="col span_12_of_12">
 <?php
 global $post;
 $cat= get_the_category($post->ID);
@@ -70,9 +69,9 @@ $image_url = $image_url[0];
    </div>
  <div class="quarterly-listing__content">
  <a href="<?php echo the_permalink(); ?>" class="quarterly-listing__date">
-    <?php echo get_the_date();?>
-      <span class="quarterly-listing__title">
-       <?php echo the_title();?></span></div>
+    <?php echo the_title();?></a>
+      <span class="quarterly-listing__title"><b>
+       <?php echo $display_name;?> | <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time> </b></span></div>
       </div>
     </li>
         <?php endwhile; ?>
@@ -81,7 +80,6 @@ $image_url = $image_url[0];
 </ul></section>
 <?php endif; ?>
 
-</div>
   </div>
 
 </main>
