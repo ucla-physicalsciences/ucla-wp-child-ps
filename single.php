@@ -10,8 +10,11 @@
 
 <div class="story__featured">
     <article class="story__featured-card">
-      <a href="#" tabindex="-1">
-      <img class="story__featured-image" src="<?php echo get_the_post_thumbnail( get_the_ID(), 'large' );?>"></a>
+<?php
+$image_id = get_post_thumbnail_id();
+$image_url = wp_get_attachment_image_src($image_id,'large');
+$image_url = $image_url[0];
+?><img class="story__featured-image" src=<?php echo $image_url;?>>
  <div class="story__featured-content">
         <h3 class="story__featured-title"><?php echo get_the_title( ); ?></h3>
       </div>
@@ -45,7 +48,8 @@ $cat= get_the_category($post->ID);
 $args = array (
         'cat'=> $cat[0]->name,
                 'posts_per_page' => 12,
-                'orderby'       => 'date',
+		'orderby'       => 'date',
+		'post__not_in' => array( get_queried_object_id() )
                 );
 $the_query = new WP_Query( $args );?>
 <?php if ( $the_query->have_posts() ) : ?>
@@ -54,12 +58,15 @@ $the_query = new WP_Query( $args );?>
 <section class="quarterly-updates-archive">
 <ul class="quarterly-listing row">
 <?php
-    while ( $the_query->have_posts() ) : $the_query->the_post();?>
+while ( $the_query->have_posts() ) : $the_query->the_post();?>
+<?php $image_id = get_post_thumbnail_id();
+$image_url = wp_get_attachment_image_src($image_id,'large');
+$image_url = $image_url[0];
+?>
     <li class="quarterly-listing__item col-12 col-md-6 col-lg-12">
                             <div class="quarterly-listing__container">
 				<div class="quarterly-listing__image-container">
-<a href="<?php echo the_permalink(); ?>">
-<img class="quarterly-listing__image lazyload" src=<?php echo get_the_post_thumbnail( get_the_ID() );?> /></a>
+ <img class="quarterly-listing__image lazyload" src=<?php echo $image_url;?>>
    </div>
  <div class="quarterly-listing__content">
  <a href="<?php echo the_permalink(); ?>" class="quarterly-listing__date">
