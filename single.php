@@ -14,7 +14,7 @@
 $image_id = get_post_thumbnail_id();
 $image_url = wp_get_attachment_image_src($image_id,'large');
 $image_url = $image_url[0];
-?><img class="story__featured-image" src=<?php echo $image_url;?>>
+?><img style="object-fit: cover;" class="story__featured-image" src=<?php echo $image_url;?>>
  <div class="story__featured-content">
         <h3 class="story__featured-title"><?php echo get_the_title( ); ?></h3>
       </div>
@@ -66,7 +66,7 @@ $image_url = $image_url[0];
     <li class="quarterly-listing__item col-12 col-md-6 col-lg-12">
                             <div class="quarterly-listing__container">
 				<div class="quarterly-listing__image-container">
- <img class="quarterly-listing__image lazyload" src=<?php echo $image_url;?>>
+ <img style="object-fit: cover;" class="quarterly-listing__image" src=<?php echo $image_url;?>>
    </div>
  <div class="quarterly-listing__content">
  <a href="<?php echo the_permalink(); ?>" class="quarterly-listing__date">
