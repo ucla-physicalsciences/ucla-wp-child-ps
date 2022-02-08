@@ -32,7 +32,7 @@ $display_name = get_the_author_meta( 'display_name' , $author_id );
 ?>
 <div class = "ucla campus">
 <div class= "col span_12_of_12"> <!-- if want more image : 8_of_12-->
-<h5><?php echo $display_name;?> | <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time> </h5>
+<h5><?php// echo $display_name;?><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time> </h5>
 <p><?php the_content(); ?> </p>
 </div>
 <!--<div class= "col span_3_of_12">
