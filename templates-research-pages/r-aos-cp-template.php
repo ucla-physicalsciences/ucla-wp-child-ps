@@ -1,4 +1,4 @@
-<?php /* Template Name: R-AOS Chemistry and Physics Template */ ?>
+<?php /* Template Name: R-AOS Oceanography Template */ ?>
 <?php get_header(); ?>
 <main id="main"> 
     <header class="header" >
@@ -14,60 +14,66 @@
       <div class="col span_9_of_12">
   <p>      <?php the_content(); ?></p>
 
-
       </div>
+
 <?php
-    $members_cp = array( 'Core Faculty' => array( 'faculty_full_professor','faculty_associate','faculty_assistant', 'distinguished_professor'  ),
-                    'Affiliated Faculty' => array( 'faculty_affiliated','faculty_adjunct','faculty_emeritus' ),
-                    'Research/Scholar' => array( 'researcher_scholar' ),
-                    'Graduate students' => array( 'graduate_master', 'graduate_phd','graduate_xep' ) );
-    foreach( $members_cp as $group_members_cp => $group_member_roles_cp ) {
+$members = array( 
+	'Core Faculty' => array( 'faculty_full_professor', 'faculty_associate_professor', 'faculty_assistant_professor' ) );
+//	'Affiliated Faculty' => array('faculty_adjunct_professor','faculty_emeritus_professor','faculty_affiliated'),
+//	'Graduate Student'=> array('graduate_student'),
+//	'Researcher/Scholar'=> array('researcher_scholar'));
+
+foreach( $members as $group_members => $group_member_roles ) {
       $args = array(
-        'role__in' => $group_member_roles_cp,
-        'orderby' => 'user_nicename',
+        'role__in' => $group_member_roles,
+        'orderby' => 'display_name',
         'order' => 'ASC',
         'tax_query' => array(
           array(
             'taxonomy' => 'research_field',
             'field'    => 'slug',
-            'terms'    => array( 'atmospheric-chemistry-and-physics' )
+            'terms'    => array( 'chemistry' )
           )
         )
-      );
-      $user_query = new WP_User_Query( $args );
-      if ( ! empty( $user_query->results ) ) { ?>
-        <div class="accordion accordion--card-content accordion--mobile-only">
+);
+
+      $user_query = new WP_User_Query($args);
+      if ( ! empty( $user_query->results ) ) { 
+?>
+
+<div class="accordion accordion--card-content accordion--mobile-only">
           <dl>
           <button class="accordion__title" aria-expanded="false">
-            <dt><?php echo $group_members_wp ?></dt>
+            <dt><?php echo $group_members ?></dt>
           </button>
-          <dd class="accordion__content">
-	    <?php foreach( $user_query->results as $user ) { ?>
-              <div class="col span_5_of_12">
-                <article class="person-card">
-                  <img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
-                  <div class="person-card__info-wrapper">
-                    <h1 class="person-card__name"><a href="<?php get_author_link(true,$user->ID)?>"><span><?php echo esc_html($user->display_name);?></span></a></h1>
-                    <h2 class="person-card__department"><span><?php
-                      global $wp_roles;
-                      if (!empty($user->roles)){
-                        foreach ($user->roles as $role){
-                          echo $wp_roles->roles[ $role ]['name'] . ' ';}
-                      };?></span></h2>
-                    <p class="person-card__description"><?php echo esc_html($user->description);?></p>
-                  </div>
-                </article>
+	  <dd class="accordion__content">
+<div class= "role-listing-container">
+            <?php foreach( $user_query->results as $user ) { ?>
+	      <div class="role-listing-item">
+<article class="person-card-grey">
+<img class="person-card__image" src= "<?php echo esc_url( get_avatar_url( $user->ID ) );?>" alt="Headshot of Faculty Member">
+<div class="person-card__info-wrapper">
+<h1 class="person-card__name"><a style = "text-decoration: none;"  href="<?php echo get_author_posts_url($user->ID);?>"><span><?php echo esc_html($user->display_name);?></span></a></h1>
+<h2 class="person-card__department"><span><?php
+        global $wp_roles;
+        if (!empty($user->roles)){
+                foreach ($user->roles as $role){
+                echo $wp_roles->roles[ $role ]['name'] . ' ';}
+
+                };?></span></h2>
+        <p class="person-card__description"><?php echo esc_html($user->description);?></p>
+</div>
+</article>
                 </div>
             <?php } ?>
-          </dd>
+	  </div>
+	  </dd>
           </dl>
         </div>
       <?php }?>
     <?php }?>
 
-  </div>
-<!-- NEW CONTENT END -->
-
+</div>
 </main>
 
 <?php get_footer(); ?>

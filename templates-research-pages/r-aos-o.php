@@ -30,9 +30,9 @@ foreach( $members as $group_members => $group_member_roles ) {
         'order' => 'ASC',
         'tax_query' => array(
           array(
-            'taxonomy' => 'member_general_category',
+            'taxonomy' => 'research_field',
             'field'    => 'slug',
-            'terms'    => array( 'core' )
+            'terms'    => array( 'oceanography' )
           )
         )
 );

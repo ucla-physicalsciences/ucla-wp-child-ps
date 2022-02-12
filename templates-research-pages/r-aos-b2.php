@@ -16,14 +16,14 @@
                     
       </div>        
 <?php
-    $faculty = array( 'Full Faculty' => array( 'faculty_full' ),
-                    'Associate Faculty' => array( 'faculty_associate' ),
-                    'Assistant Faculty' => array( 'faculty_assistant' ),
-                    'Affiliated Faculty' => array( 'faculty_adjunct', 'faculty_emeriti' ) );
+    $faculty = array( 'Full Faculty' => array( 'faculty_full_professor' ),
+                    'Associate Faculty' => array( 'faculty_associate_professor' ),
+                    'Assistant Faculty' => array( 'faculty_assistant_professor' ),
+                    'Affiliated Faculty' => array( 'faculty_adjunct_professor', 'faculty_emeriti' ) );
     foreach( $faculty as $faculty_group => $faculty_roles ) {
       $args = array(
         'role__in' => $faculty_roles,
-        'orderby' => 'user_nicename',
+        'orderby' => 'display_name',
         'order' => 'ASC', 
         'tax_query' => array(
           array(
