@@ -11,7 +11,6 @@
 </div>
 </header>
 <div  class="ucla campus">
-<!-- TEST -->
 <section class="quarterly-updates-archive">
 <ul class="quarterly-listing row">
     <li class="quarterly-listing__item col-12 col-md-6 col-lg-12">
