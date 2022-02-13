@@ -16,7 +16,9 @@ $image_url = wp_get_attachment_image_src($image_id,'large');
 $image_url = $image_url[0];
 ?><img style="object-fit: cover;" class="story__featured-image" src=<?php echo $image_url;?>>
  <div class="story__featured-content">
-        <h3 class="story__featured-title"><?php echo get_the_title( ); ?></h3>
+	<h3 class="story__featured-title"><?php echo get_the_title( ); ?></h3>
+	<b>
+       <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time> </b>
       </div>
     </article>
   </div>
@@ -32,7 +34,7 @@ $display_name = get_the_author_meta( 'display_name' , $author_id );
 ?>
 <div class = "ucla campus">
 <div class= "col span_12_of_12"> <!-- if want more image : 8_of_12-->
-<h5><?php// echo $display_name;?><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time> </h5>
+
 <p><?php the_content(); ?> </p>
 </div>
 <!--<div class= "col span_3_of_12">
@@ -71,7 +73,7 @@ $image_url = $image_url[0];
  <a href="<?php echo the_permalink(); ?>" class="quarterly-listing__date">
     <?php echo the_title();?></a>
       <span class="quarterly-listing__title"><b>
-       <?php echo $display_name;?> | <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time> </b></span></div>
+       <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time> </b></span></div>
       </div>
     </li>
         <?php endwhile; ?>

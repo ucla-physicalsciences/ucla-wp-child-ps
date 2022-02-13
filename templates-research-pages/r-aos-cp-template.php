@@ -18,11 +18,12 @@
 
 <?php
 $members = array( 
-	'Core Faculty' => array( 'faculty_full_professor', 'faculty_associate_professor', 'faculty_assistant_professor' ) );
-//	'Affiliated Faculty' => array('faculty_adjunct_professor','faculty_emeritus_professor','faculty_affiliated'),
-//	'Graduate Student'=> array('graduate_student'),
-//	'Researcher/Scholar'=> array('researcher_scholar'));
+	'Core Faculty' => array( 'faculty_full_professor', 'faculty_associate_professor', 'faculty_assistant_professor' ),
+	'Affiliated Faculty' => array('faculty_adjunct_professor','faculty_emeritus_professor','faculty_affiliated'),
+	'Graduate Student'=> array('graduate_student'),
+	'Researcher/Scholar'=> array('researcher_scholar'));
 
+//      error_log(print_r($members['Core Faculty'][0], false));
 foreach( $members as $group_members => $group_member_roles ) {
       $args = array(
         'role__in' => $group_member_roles,
@@ -32,12 +33,13 @@ foreach( $members as $group_members => $group_member_roles ) {
           array(
             'taxonomy' => 'research_field',
             'field'    => 'slug',
-            'terms'    => array( 'chemistry' )
+            'terms'    => array( 'atmospheric-chemistry-and-physics' )
           )
         )
 );
 
       $user_query = new WP_User_Query($args);
+//      error_log(print_r($user_query->results, false));
       if ( ! empty( $user_query->results ) ) { 
 ?>
 
