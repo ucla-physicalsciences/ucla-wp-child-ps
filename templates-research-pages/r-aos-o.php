@@ -17,12 +17,11 @@
       </div>
 
 <?php
-$members = array( 
-	'Core Faculty' => array( 'faculty_full_professor', 'faculty_associate_professor', 'faculty_assistant_professor' ),
-	'Affiliated Faculty' => array('faculty_adjunct_professor','faculty_emeritus_professor','faculty_affiliated'),
-	'Graduate Student'=> array('graduate_student'),
-	'Researcher/Scholar'=> array('researcher_scholar'));
+$members = array( 'Core Faculty' => array( 'faculty_full_professor', 'faculty_associate_professor', 'faculty_assistant_professor' ),
+        'Affiliated Faculty' => array( 'faculty_full_professor', 'faculty_associate_professor', 'faculty_assistant_professor', 'faculty_adjunct_professor', 'faculty_emeritus_professor', 'faculty_affiliated_professor' ),
+         'Postdoctoral Scholars and Project & Research Scientists' => array('postdoctoral_scholar','research_scientist_full', 'research_scientist_associate', 'research_scientist_assistant', 'project_scientist_assistant', 'project_scientist_associate','project_scientist_full' ),
 
+);
 foreach( $members as $group_members => $group_member_roles ) {
       $args = array(
         'role__in' => $group_member_roles,

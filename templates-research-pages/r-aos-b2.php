@@ -16,10 +16,11 @@
                     
       </div>        
 <?php
-    $faculty = array( 'Full Faculty' => array( 'faculty_full_professor' ),
-                    'Associate Faculty' => array( 'faculty_associate_professor' ),
-                    'Assistant Faculty' => array( 'faculty_assistant_professor' ),
-                    'Affiliated Faculty' => array( 'faculty_adjunct_professor', 'faculty_emeriti' ) );
+$faculty = array( 'Core Faculty' => array( 'faculty_full_professor', 'faculty_associate_professor', 'faculty_assistant_professor' ),
+	'Affiliated Faculty' => array( 'faculty_full_professor', 'faculty_associate_professor', 'faculty_assistant_professor', 'faculty_adjunct_professor', 'faculty_emeritus_professor', 'faculty_affiliated_professor' ),
+	 'Postdoctoral Scholars and Project & Research Scientists' => array('postdoctoral_scholar','research_scientist_full', 'research_scientist_associate', 'research_scientist_assistant', 'project_scientist_assistant', 'project_scientist_associate','project_scientist_full' ),
+
+);
     foreach( $faculty as $faculty_group => $faculty_roles ) {
       $args = array(
         'role__in' => $faculty_roles,
