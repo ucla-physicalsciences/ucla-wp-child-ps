@@ -47,7 +47,7 @@ $display_name = get_the_author_meta( 'display_name' , $author_id );
 global $post;
 $cat= get_the_category($post->ID);
 $args = array (
-        'cat'=> $cat[0]->name,
+        'category_name'=> $cat[0]->name,
                 'posts_per_page' => 12,
 		'orderby'       => 'date',
 		'post__not_in' => array( get_queried_object_id() )

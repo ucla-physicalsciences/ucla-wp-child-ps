@@ -12,47 +12,46 @@
 </div>
 </div>
 </header>
-<div class = "ucla campus">
+<div  class="ucla campus">
 <?php
+$cat= 'newsletter';
 $args = array (
-	'tax_query' => array( array (
-		'taxonomy' => 'news_type',
-		'field' => 'slug',
-		'terms'=> 'newsletters')),
-        'post_type'=>'news',
+	'post_type'       => 'post',
+        'category_name'=> 'newsletter',
                 'posts_per_page' => 12,
                 'orderby'       => 'date',
-                );
+                 );
 $the_query = new WP_Query( $args );?>
+<?php if ( $the_query->have_posts() ) : ?>
+
+<br>
 <section class="quarterly-updates-archive">
 <ul class="quarterly-listing row">
 <?php
-    if ( $the_query->have_posts() ) : ?>
-        <?php while ( $the_query->have_posts() ) : $the_query->the_post();
-    $thumbnail_other = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );?>
+while ( $the_query->have_posts() ) : $the_query->the_post();?>
+<?php $image_id = get_post_thumbnail_id();
+$image_url = wp_get_attachment_image_src($image_id,'large');
+$image_url = $image_url[0];
+?>
     <li class="quarterly-listing__item col-12 col-md-6 col-lg-12">
                             <div class="quarterly-listing__container">
-				<div class="quarterly-listing__image-container">
-<a href="<?php echo the_permalink(); ?>">
-<img class="quarterly-listing__image lazyload" src="<?php echo $thumbnail_other[0]?>" /></a>
+                                <div class="quarterly-listing__image-container">
+ <img style="object-fit: cover;" class="quarterly-listing__image" src=<?php echo $image_url;?>>
    </div>
  <div class="quarterly-listing__content">
  <a href="<?php echo the_permalink(); ?>" class="quarterly-listing__date">
-    <?php echo the_title();?>
-</a>
-      <span class="quarterly-listing__title">
-                                        <p> <span style="font-weight: 400;">
-      <?php if(get_post_meta($post->ID, 'summary_news', true)):
-          echo get_post_meta($post->ID, 'summary_news', true);
-endif;?></span></p></span></div>
+    <?php echo the_title();?></a>
+      <span class="quarterly-listing__title"><b>
+        <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time> </b></span></div>
       </div>
     </li>
         <?php endwhile; ?>
 
         <?php wp_reset_postdata(); ?>
-
-     <?php endif; ?>
 </ul></section>
-</div>
+<?php endif; ?>
+
+  </div>
+
 </main>
 <?php get_footer();?>

@@ -14,10 +14,9 @@
 </header>
 <div  class="ucla campus">
 <?php
-global $post;
-$cat= get_the_category($post->ID);
 $args = array (
-        'cat'=> $cat[0]->name,
+        'post_type'       => 'post',
+        'category_name'=> 'news',
                 'posts_per_page' => 12,
 		'orderby'       => 'date',
 	         );
