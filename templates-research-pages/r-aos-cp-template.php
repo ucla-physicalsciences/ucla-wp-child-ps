@@ -33,6 +33,11 @@ foreach( $members as $group_members => $group_member_roles ) {
             'taxonomy' => 'research_field',
             'field'    => 'slug',
             'terms'    => array( 'atmospheric-chemistry-and-physics' )
+          ),
+          array(
+            'taxonomy' => 'member_general_category',
+            'field'    => 'name',
+            'terms'    => array( $group_members )
           )
         )
 );

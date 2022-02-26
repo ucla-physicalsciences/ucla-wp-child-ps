@@ -32,6 +32,11 @@ $members_sp  = array( 'Core Faculty' => array( 'faculty_full_professor', 'facult
             'taxonomy' => 'research_field',
             'field'    => 'slug',
             'terms'    => array( 'space-physics' )
+          ),
+          array(
+            'taxonomy' => 'member_general_category',
+            'field'    => 'name',
+            'terms'    => array( $group_members_sp )
           )
         )
       );

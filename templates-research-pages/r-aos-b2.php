@@ -31,6 +31,11 @@ $faculty = array( 'Core Faculty' => array( 'faculty_full_professor', 'faculty_as
             'taxonomy' => 'research_field',
             'field'    => 'slug',
             'terms'    => array( 'biogeochemistry' )
+          ),
+          array(
+            'taxonomy' => 'member_general_category',
+            'field'    => 'name',
+            'terms'    => array( $faculty_group )
           )
         ) 
       );  
