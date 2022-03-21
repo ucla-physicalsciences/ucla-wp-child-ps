@@ -7,8 +7,6 @@
 <div class= "col span_12_of_12">
 <br>
 <h2 class="yellow-side-header">Newsletters</h2><br><br>
-<p class="lead"> Introductory description of the Newsletters category </p>
-<p>Below you'll find a listing of all the Newsletters</p>
 </div>
 </div>
 </header>
