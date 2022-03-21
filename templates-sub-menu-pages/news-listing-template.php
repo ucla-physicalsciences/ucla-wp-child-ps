@@ -17,7 +17,7 @@
 $args = array (
         'post_type'       => 'post',
         'category_name'=> 'news',
-                'posts_per_page' => 12,
+                'nopaging' => true,
 		'orderby'       => 'date',
 	         );
 $the_query = new WP_Query( $args );?>
