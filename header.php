@@ -75,6 +75,6 @@
         </nav>
       </div>
 
-      <!-- <div id="search"></div> -->
+       <div id="search"></div>
 
     </header>

@@ -1,8 +1,8 @@
 <?php /* Template Name: About Template */?>
-<?php get_header();?>
+<?php get_header('new');?>
 <main id="main">
 <header class="header">
-<div class = "ucla campus">
+<div class="ucla campus">
 <div class= "col span_12_of_12">
 <br>
 <h2 class="yellow-side-header">About</h2><br><br>

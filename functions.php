@@ -416,6 +416,12 @@ wp_enqueue_style('quarterly-updates-CSS', get_stylesheet_directory_uri() .'/extr
 wp_enqueue_style('news-CSS', get_stylesheet_directory_uri() . '/extra-css/news.css',array('ucla-style' ), wp_get_theme()->get('Version') );
 wp_enqueue_style('listing-CSS', get_stylesheet_directory_uri() . '/extra-css/listing.css',array('ucla-style' ), wp_get_theme()->get('Version') );
 wp_enqueue_style('img-CSS', get_stylesheet_directory_uri() . '/extra-css/img.css',array('ucla-style' ), wp_get_theme()->get('Version') );
-wp_enqueue_style('accordion-CSS', get_stylesheet_directory_uri() . '/extra-css/ucla-ps-accordion.css',array('ucla-style' ), wp_get_theme()->get('Version') ); }
+wp_enqueue_style('accordion-CSS', get_stylesheet_directory_uri() . '/extra-css/ucla-ps-accordion.css',array('ucla-style' ), wp_get_theme()->get('Version') ); 
+wp_enqueue_style('header2-CSS', get_stylesheet_directory_uri() . '/extra-css/header2.css',array('ucla-style' ), wp_get_theme()->get('Version') ); }
 
-
+register_nav_menus(
+	array(
+		'top-menu' => 'Top Menu',
+		'mobile-menu' => 'Mobile Menu'
+	)
+);
