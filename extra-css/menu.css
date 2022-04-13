@@ -1,0 +1,19 @@
+#menu.is-active{
+        top:97px;
+        
+}
+#menu{
+	top:144px;
+	margin-right:0px !important;
+}
+
+
+@media(min-width:1024px){
+.search-desktop #search-button{
+	height:31px;
+	width:40px;
+}
+.search-desktop #search-button:hover  {
+	background:white;
+}
+}

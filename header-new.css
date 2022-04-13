@@ -1,0 +1,87 @@
+.header-fix{
+	display: block;
+	position: relative;
+	border-bottom: 1px solid #ccc;
+	height:fit-content;
+}
+@media(min-width:1024px){
+.header-fix{
+	min-height:183px;
+	display: block;
+        position: relative;
+        border-bottom: 1px solid #ccc;
+}}
+
+@media(min-width:768px){
+.header-fix{
+	min-height:128px;
+	display: block;
+        position: relative;
+        border-bottom: 1px solid #ccc;
+}}
+.header-fix-logo{
+	padding: 12px 24px;
+	display: block;
+	background:  #2774AE;
+	max-height:48px;
+}
+.header-fix-logo__wrap{
+display:block;
+max-width:1176px;
+margin:0 auto;
+}
+
+.header-fix-logo__wrap  img{
+display:block;
+height: 24px;
+position:relative;
+}
+
+
+.site-name-fix{
+	display:block;
+	max-width:1176px;
+	margin: 0 auto;
+
+}
+@media (min-width: 1024px){
+.site-name-fix{
+padding: 24px 24px 0;
+}}
+.site-name-fix__wrap{
+max-width:260px;
+padding: 24px 24px 0;
+} 
+
+@media (min-width:768px){
+.site-name-fix__wrap{
+max-width:260px;
+padding: 24px 24px 0;
+} }
+
+.site-name-fix  a {
+color: #000;
+text-decoration:none;
+font-weight:bold;
+font-size:24px;
+}
+.site-name-fix a:hover {
+	background:none;}
+@media (min-width: 768px)
+{
+
+.site-name-fix a {
+	font-size:28px;
+	line-height:32px;
+	}
+
+}
+
+.test-wrap-fix{
+display:block;
+max-width: 1176px;
+margin:0 auto;
+padding:24px 24px 0;
+position:relative;
+}
+
