@@ -44,11 +44,13 @@ float:right;
 </div>
 <br><br><br><br><br><br>
 <div class="ucla campus">
-<div class=" col span_8_of_12">
+<div class=" col span_8_of_12"><?php
+			$terms=get_the_terms($user_data,'research_field');
+if($terms):?>
 <h2 class="yellow-side-header">Research Field</h2>
 <br><br>
 <p><?php
-			$terms=get_the_terms($user_data,'research_field');
+			
 	$field_list= implode(',',wp_list_pluck($terms,'term_id'));
 wp_tag_cloud(
 	array( 
@@ -58,7 +60,7 @@ wp_tag_cloud(
 		'separator'=>'<br><br>',
 		'include'=>$field_list
 	));?></p>
-
+<?php endif;?>
 <?php  $args = array(
 	'post_type'=>'award',
 	'author'=>get_queried_object_id(),
@@ -152,21 +154,29 @@ endif;?>
 
 </div>
 <div class="col span_2_of_12">
-<h2 class="yellow-side-header">Contact Informations</h2>
+
+<?php
+$email = get_the_author_meta('email',$author_id);
+$url = get_the_author_meta('user_url',$author_id);
+$phone = get_the_author_meta('phone-number',$author_id);
+$office_location = get_the_author_meta('office-location',$author_id);
+if ($email or  $url or $phone or $office_location): ?>
+<h2 class="yellow-side-header">Contacts</h2>
 <br><br>
 <?php $check = get_the_author_meta('display_email_checkbox',$author_id);
 if ($check) {?>
-<p><b>Email: </b><?php echo get_the_author_meta('email',$author_id);?>
+<p><b>Email: </b><?php echo $email?>
 <br><br><?php }?>
 <b>Website: </b>
-<?php echo get_the_author_meta('user_url', $author_id);?>
+<?php echo $url; ?>
 <br><br>
 <b>Phone Number: </b>
-<?php echo get_the_author_meta('phone-number', $author_id);?>
+<?php echo $phone;?>
 <br><br>
 <b>Office Location: </b>
-<?php echo get_the_author_meta('office-location', $author_id);?>
+<?php echo $office_location;?>
 <br></p>
+<?php endif;?>
 </div></div>
 </main>
 

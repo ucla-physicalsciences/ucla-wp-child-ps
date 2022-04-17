@@ -11,8 +11,9 @@ $members = array( 'Core Faculty' => array( 'faculty_full_professor', 'faculty_as
 
 foreach( $members as $group_members => $group_member_roles ) {
       $args = array(
-        'role__in' => $group_member_roles,
-        'orderby' => 'display_name',
+	      'role__in' => $group_member_roles,
+	      'meta_key'=>'last_name',
+        'orderby' => 'meta_value',
         'order' => 'ASC',
         'tax_query' => array(
           array(

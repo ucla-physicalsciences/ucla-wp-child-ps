@@ -53,7 +53,7 @@
                         <img src="http://aos.ucla.edu/wp-content/uploads/2021/10/Atmospheric_Chemistry7.jpg" class="img--retina img--wide" alt="Antartica ocean figure" />
                     </div>
                     <div class="mt-lg-32 col mb-0 span_5_of_12 school-card__title">
-                        <span><span><h2 class="pb-0">Chemistry and Physics</h2></span></span>
+                        <span><span><h2 class="pb-0">Atmospheric Chemistry and Physics</h2></span></span>
        <br>             </div>
                 </a>
 
@@ -87,7 +87,7 @@
                         <img src="http://aos.ucla.edu/wp-content/uploads/2021/10/Atmospheric_Dynamics3.png" class="img--retina img--wide pt-40" alt="Antartica ocean figure" />
                     </div>
                     <div class="mt-lg-32 col mb-0 span_5_of_12 school-card__title">
-                        <span><span><h2 class="pb-0">Dynamics and Climate</h2></span></span>
+                        <span><span><h2 class="pb-0">Atmospheric Dynamics and Climate</h2></span></span>
        <br>             </div>
                 </a>
 

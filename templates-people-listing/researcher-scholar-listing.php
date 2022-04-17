@@ -13,7 +13,8 @@ $members = array( 'Postdoctoral Scholars and Project & Research Scientists' => a
 foreach( $members as $group_members => $group_member_roles ) {
       $args = array(
         'role__in' => $group_member_roles,
-        'orderby' => 'display_name',
+        'meta_key'=>'last_name',
+        'orderby' => 'meta_value',
         'order' => 'ASC'
 );
 

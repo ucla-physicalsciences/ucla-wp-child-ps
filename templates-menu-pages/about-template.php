@@ -1,5 +1,5 @@
 <?php /* Template Name: About Template */?>
-<?php get_header('test');?>
+<?php get_header();?>
 <main id="main">
 <header class="header">
 <div class="ucla campus">

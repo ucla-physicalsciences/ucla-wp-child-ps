@@ -13,7 +13,8 @@
 
 $args= array(
         'role' => 'graduate_student',
-        'orderby'=> 'display_name',
+        'meta_key'=>'last_name',
+        'orderby' => 'meta_value',
         'order' => 'ASC'
 );
 $users=get_users($args);?>

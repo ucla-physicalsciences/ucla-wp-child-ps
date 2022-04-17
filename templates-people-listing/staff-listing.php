@@ -14,7 +14,8 @@
 
 $args= array(
         'role' => 'staff_cao',
-        'orderby'=> 'display_name',
+        'meta_key'=>'last_name',
+        'orderby' => 'meta_value',
         'order' => 'ASC'
 );
 $users=get_users($args);?>
@@ -51,7 +52,8 @@ foreach ( $users as $user ) {
 
 $args= array(
         'role' => 'staff_student_affairs',
-        'orderby'=> 'display_name',
+        'meta_key'=>'last_name',
+        'orderby' => 'meta_value',
         'order' => 'ASC'
 );
 $users=get_users($args);?>
@@ -89,7 +91,8 @@ foreach ( $users as $user ) {
 
 $args= array(
         'role' => 'staff_fund_managers',
-        'orderby'=> 'display_name',
+        'meta_key'=>'last_name',
+        'orderby' => 'meta_value',
         'order' => 'ASC'
 );
 $users=get_users($args);?>
@@ -127,7 +130,8 @@ foreach ( $users as $user ) {
 
 $args= array(
         'role' => 'staff_academic_personnel',
-        'orderby'=> 'display_name',
+        'meta_key'=>'last_name',
+        'orderby' => 'meta_value',
         'order' => 'ASC'
 );
 $users=get_users($args);?>
@@ -164,7 +168,8 @@ foreach ( $users as $user ) {
 
 $args= array(
         'role' => 'staff_office_coordinator',
-        'orderby'=> 'display_name',
+        'meta_key'=>'last_name',
+        'orderby' => 'meta_value',
         'order' => 'ASC'
 );
 $users=get_users($args);?>
@@ -202,7 +207,8 @@ of Faculty Member">
 
 $args= array(
         'role' => 'staff_IT',
-        'orderby'=> 'display_name',
+        'meta_key'=>'last_name',
+        'orderby' => 'meta_value',
         'order' => 'ASC'
 );
 $users=get_users($args);?>
