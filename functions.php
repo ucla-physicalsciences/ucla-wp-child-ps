@@ -194,6 +194,14 @@ function extra_profile_fields($user){ ?>
             <span class="description">Enter your office building and number.</span>
             </td>
 	</tr>
+ <tr>
+            <th><label for="mailing-address">Mailing address</label></th>
+            <td>
+ <input type="text" name="mailing-address" id="mailing-address" value="<?php echo esc_attr( get_the_author_meta( 'mailing-address', $user->ID ) ); ?>" class="regular-text" /><br />
+            <span class="description">Enter your mailing address</span>
+            </td>
+        </tr>
+
 <tr>
             <th><label for="user_role">Position</label></th>
             <td>
@@ -222,6 +230,7 @@ function save_extra_profile_fields( $user_id ) {
     update_user_meta( $user_id, 'office-location', $_POST['office-location'] );
     update_user_meta( $user_id, 'user_role', $_POST['user_role'] );
     update_user_meta( $user_id, 'user_fields', $_POST['user_fields'] );
+    update_user_meta( $user_id, 'mailing-address', $_POST['mailing-address'] );
     $visible= isset($_POST['display_email_checkbox']);
     $visible = (int)$visible;
     update_user_meta( $user_id,'display_email_checkbox',$visible);  

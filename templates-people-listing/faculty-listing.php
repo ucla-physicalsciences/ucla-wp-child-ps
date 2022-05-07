@@ -36,6 +36,7 @@ foreach ( $user_query->results as $user ) {
         $url =  get_the_author_meta('user_url',$user_ID);
         $phone=  get_the_author_meta('phone-number',$user_ID);
 	$office_location =  get_the_author_meta('office-location',$user_ID);
+	$mailing = get_the_author_meta('mailing-address',$user_ID);
 	$check =  get_the_author_meta('display_email_checkbox',$user_ID);
         ?><div class="role-listing-item">
 <article class="person-card-grey">
@@ -66,7 +67,14 @@ if(!empty($phone)){?>
       <div class="person-card__contact-details">
         <p class="person-card__contact-label">Office</p>
 	<p><?php echo $office_location;?></p>
-	</div><?php };
+	</div>
+<?php };
+        if(!empty($mailing)){?>
+<div class="person-card__contact-details">
+        <p class="person-card__contact-label">Mail</p>
+        <p><?php echo $mailing;?><br />Los Angeles, CA 90024</p>
+      </div>
+<?php };
 if (!empty($url)){?>
       <div class="person-card__contact-details">
         <p class="person-card__contact-label">Website</p>
@@ -111,7 +119,8 @@ foreach ( $user_query->results as $user ) {
 	$email = get_the_author_meta('email',$user_ID);
         $url =  get_the_author_meta('user_url',$user_ID);
         $phone=  get_the_author_meta('phone-number',$user_ID);
-        $office_location =  get_the_author_meta('office-location',$user_ID);
+	$office_location =  get_the_author_meta('office-location',$user_ID);
+	$mailing = get_the_author_meta('mailing-address',$user_ID);
         $check =  get_the_author_meta('display_email_checkbox',$user_ID);
 ?><div class="role-listing-item">
 <article class="person-card-grey">
@@ -143,6 +152,12 @@ if(!empty($phone)){?>
         <p class="person-card__contact-label">Office</p>
 	<p><?php echo $office_location;?></p>
 	</div><?php };
+	if(!empty($mailing)){?>
+<div class="person-card__contact-details">
+        <p class="person-card__contact-label">Mail</p>
+	<p><?php echo $mailing;?><br />Los Angeles, CA 90024</p>
+      </div>
+<?php };
 if (!empty($url)){?>
       <div class="person-card__contact-details">
         <p class="person-card__contact-label">Website</p>
