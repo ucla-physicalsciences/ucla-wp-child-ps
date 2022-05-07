@@ -22,6 +22,11 @@ $users=get_users($args);?>
 <div class= "role-listing-container"><?php
 foreach ( $users as $user ) {
 	wp_get_current_user();
+	$user_ID=$user->ID;
+        $email = $user->email;
+        $url = $user->user_url;
+        $phone= $user->phone-number;
+        $office_location = $user->office-location;
 	?><div class="role-listing-item">
 <article class="person-card-grey">
 
@@ -35,7 +40,28 @@ foreach ( $users as $user ) {
                 echo $wp_roles->roles[ $role ]['name'] . ' ';}
 
                 };?></span></h2>
-        <p class="person-card__description"><?php echo esc_html($user->description);?></p>
+	<p class="person-card__description"><?php echo esc_html($user->description);?></p>
+<div class="person-card__contact">
+<?php if(!empty($email)){?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Email</p>
+	<a href="mailto:<?php echo $email;?>"><?php echo $email;?></a>
+	</div><?php };
+if(!empty($phone)){?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Phone</p>
+	<a href="tel:+1<?php echo $phone?>"><?php echo $phone;?></a>
+	</div><?php };
+	if(!empty($office_location)){?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Office</p>
+	<p><?php echo $office_location;?></p>
+	</div><?php };?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Mail</p>
+        <p>410 Charles E. Young Drive East,<br />Los Angeles, CA 90024</p>
+      </div>
+    </div>
     </div>
 </article>
 </div><?php
@@ -60,6 +86,11 @@ $users=get_users($args);?>
 <div class= "role-listing-container"><?php
 foreach ( $users as $user ) {
 	wp_get_current_user();
+	$user_ID=$user->ID;
+        $email = $user->email;
+        $url = $user->user_url;
+        $phone= $user->phone-number;
+        $office_location = $user->office-location;
 	?>	<div class= "role-listing-item">
 <article class="person-card-grey">
 
@@ -74,6 +105,27 @@ foreach ( $users as $user ) {
 
                 };?></span></h2>
 	<p class="person-card__description"><?php echo esc_html($user->description);?></p>
+<div class="person-card__contact">
+<?php if(!empty($email)){?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Email</p>
+	<a href="mailto:<?php echo $email;?>"><?php echo $email;?></a>
+	</div><?php }; 
+if(!empty($phone)){?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Phone</p>
+	<a href="tel:+1<?php echo $phone?>"><?php echo $phone;?></a>
+	</div><?php }; 
+	if(!empty($office_location)){?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Office</p>
+	<p><?php echo $office_location;?></p>
+	</div><?php };?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Mail</p>
+        <p>410 Charles E. Young Drive East,<br />Los Angeles, CA 90024</p>
+      </div>
+    </div>
 </div>
 </article>
 </div><?php
@@ -99,6 +151,11 @@ $users=get_users($args);?>
 <div class= "role-listing-container"><?php
 foreach ( $users as $user ) {
 	wp_get_current_user();
+	$user_ID=$user->ID;
+        $email = $user->email;
+        $url = $user->user_url;
+        $phone= $user->phone-number;
+        $office_location = $user->office-location;
 	 ?>      <div class= "role-listing-item">
 <article class="person-card-grey">
 
@@ -113,6 +170,27 @@ foreach ( $users as $user ) {
 
                 };?></span></h2>
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
+<div class="person-card__contact">
+<?php if(!empty($email)){?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Email</p>
+	<a href="mailto:<?php echo $email;?>"><?php echo $email;?></a>
+	</div><?php }; 
+if(!empty($phone)){?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Phone</p>
+	<a href="tel:+1<?php echo $phone?>"><?php echo $phone;?></a>
+	</div><?php }; 
+	if(!empty($office_location)){?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Office</p>
+	<p><?php echo $office_location;?></p>
+	</div><?php };?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Mail</p>
+        <p>410 Charles E. Young Drive East,<br />Los Angeles, CA 90024</p>
+      </div>
+    </div>
 </div>
 </article>
 </div><?php
@@ -138,6 +216,11 @@ $users=get_users($args);?>
 <div class= "role-listing-container"><?php
 foreach ( $users as $user ) {
 	wp_get_current_user();
+	$user_ID=$user->ID;
+        $email = $user->email;
+        $url = $user->user_url;
+        $phone= $user->phone-number;
+        $office_location = $user->office-location;
 	 ?>      <div class= "role-listing-item">
 <article class="person-card-grey">
 
@@ -152,6 +235,27 @@ foreach ( $users as $user ) {
 
                 };?></span></h2>
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
+<div class="person-card__contact">
+<?php if(!empty($email)){?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Email</p>
+	<a href="mailto:<?php echo $email;?>"><?php echo $email;?></a>
+	</div><?php }; 
+if(!empty($phone)){?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Phone</p>
+	<a href="tel:+1<?php echo $phone?>"><?php echo $phone;?></a>
+	</div><?php }; 
+	if(!empty($office_location)){?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Office</p>
+	<p><?php echo $office_location;?></p>
+	</div><?php };?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Mail</p>
+        <p>410 Charles E. Young Drive East,<br />Los Angeles, CA 90024</p>
+      </div>
+    </div>
 </div></article>
 </div><?php
 }
@@ -176,6 +280,11 @@ $users=get_users($args);?>
 <div class= "role-listing-container"><?php
 foreach ( $users as $user ) {
 	wp_get_current_user();
+	$user_ID=$user->ID;
+        $email = $user->email;
+        $url = $user->user_url;
+        $phone= $user->phone-number;
+        $office_location = $user->office-location;
 	 ?>      <div class= "role-listing-item">
 <article class="person-card-grey">
 
@@ -191,6 +300,27 @@ of Faculty Member">
 
                 };?></span></h2>
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
+<div class="person-card__contact">
+<?php if(!empty($email)){?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Email</p>
+	<a href="mailto:<?php echo $email;?>"><?php echo $email;?></a>
+	</div><?php }; 
+if(!empty($phone)){?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Phone</p>
+	<a href="tel:+1<?php echo $phone?>"><?php echo $phone;?></a>
+	</div><?php }; 
+	if(!empty($office_location)){?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Office</p>
+	<p><?php echo $office_location;?></p>
+	</div><?php };?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Mail</p>
+        <p>410 Charles E. Young Drive East,<br />Los Angeles, CA 90024</p>
+      </div>
+    </div>
 </div></article>
 </div><?php
 }
@@ -215,6 +345,11 @@ $users=get_users($args);?>
 <div class= "role-listing-container"><?php
 foreach ( $users as $user ) {
 	wp_get_current_user();
+	$user_ID=$user->ID;
+        $email = $user->email;
+        $url = $user->user_url;
+        $phone= $user->phone-number;
+        $office_location = $user->office-location;
  ?>      <div class= "role-listing-item">
 <article class="person-card-grey">
 
@@ -230,6 +365,27 @@ of Faculty Member">
 
                 };?></span></h2>
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
+<div class="person-card__contact">
+<?php if(!empty($email)){?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Email</p>
+	<a href="mailto:<?php echo $email;?>"><?php echo $email;?></a>
+	</div><?php }; 
+if(!empty($phone)){?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Phone</p>
+	<a href="tel:+1<?php echo $phone?>"><?php echo $phone;?></a>
+	</div><?php }; 
+	if(!empty($office_location)){?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Office</p>
+	<p><?php echo $office_location;?></p>
+	</div><?php };?>
+      <div class="person-card__contact-details">
+        <p class="person-card__contact-label">Mail</p>
+        <p>410 Charles E. Young Drive East,<br />Los Angeles, CA 90024</p>
+      </div>
+    </div>
 </div></article>
 </div><?php
 }
