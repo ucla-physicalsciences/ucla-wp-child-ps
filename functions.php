@@ -419,4 +419,5 @@ wp_enqueue_style('img-CSS', get_stylesheet_directory_uri() . '/extra-css/img.css
 wp_enqueue_style('header2-CSS', get_stylesheet_directory_uri() . '/header-new.css',array('ucla-style' ), wp_get_theme()->get('Version') );
 wp_enqueue_style('menu-CSS', get_stylesheet_directory_uri() . '/extra-css/menu.css',array('ucla-style' ), wp_get_theme()->get('Version') );
 wp_enqueue_style('larger-CSS', get_stylesheet_directory_uri() . '/extra-css/larger.css',array('ucla-style' ), wp_get_theme()->get('Version') );
+wp_enqueue_style('person-CSS', get_stylesheet_directory_uri() . '/extra-css/person-card.css',array('ucla-style' ), wp_get_theme()->get('Version') );
 wp_enqueue_style('tile-CSS', get_stylesheet_directory_uri() . '/extra-css/tile.css',array('ucla-style' ), wp_get_theme()->get('Version') );}

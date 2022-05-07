@@ -162,7 +162,7 @@ $phone = get_the_author_meta('phone-number',$author_id);
 $office_location = get_the_author_meta('office-location',$author_id);
 if ($email or  $url or $phone or $office_location): ?>
 <h2 class="yellow-side-header">Contacts</h2>
-<br><br>
+<div class="person-card__contact">
 <?php $check = get_the_author_meta('display_email_checkbox',$author_id);
 if ($check) {?>
 <p><b>Email: </b><?php echo $email?>
@@ -176,7 +176,7 @@ if ($check) {?>
 <b>Office Location: </b>
 <?php echo $office_location;?>
 <br></p>
-<?php endif;?>
+<?php endif;?><br><br>
 </div></div>
 </main>
 

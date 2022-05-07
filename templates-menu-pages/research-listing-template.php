@@ -62,7 +62,7 @@
  <a href="http://aos.ucla.edu/?page_id=38/"  class="quarterly-listing__date">
  Oceanography</a>
       <span class="quarterly-listing__title"><b>
-Geophysical fluid dynamics; ocean and climate modeling.  Geophysical fluid dynamics and ocean-ice interactions. Marine biogeochemistry and geomicrobiology.
+The still largely unexplored vastness of the ocean, covering about 2/3 of the surface of earth and with an average depth of almost 4 kilometers, has fascinated humans for as long as we have records for. Its currents, chemical composition, and ecosystems are all highly variable at different locations and times.
  </b></span></div>
       </div>
     </li>
