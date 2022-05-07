@@ -21,12 +21,13 @@ $users=get_users($args);?>
 <div class= "role-listing-container"><?php
 foreach ( $users as $user ) {
 	wp_get_current_user();
-	$user_ID=$user->ID;
-        $email = $user->email;
-        $url = $user->user_url;
-        $phone= $user->phone-number;
-        $office_location = $user->office-location;
- ?>      <div class= "role-listing-item">
+ $user_ID=$user->ID;
+	$email = get_the_author_meta('email',$user_ID);
+        $url =  get_the_author_meta('user_url',$user_ID);
+        $phone=  get_the_author_meta('phone-number',$user_ID);
+	$office_location =  get_the_author_meta('office-location',$user_ID);
+	$check =  get_the_author_meta('display_email_checkbox',$user_ID);
+?>      <div class= "role-listing-item">
 <article class="person-card-grey">
 
 <img class="person-card__image"  src= "<?php echo esc_url( get_avatar_url( $user_ID ) );?>" alt="Headshot
@@ -41,27 +42,29 @@ of Faculty Member">
 
                 };?></span></h2>
         <p class="person-card__description"><?php echo esc_html($user->description);?></p>
-    <div class="person-card__contact">
-<?php if(!empty($email)){?>
+ <div class="person-card__contact">
+<?php if((!empty($email))&& $check){?>
       <div class="person-card__contact-details">
         <p class="person-card__contact-label">Email</p>
 	<a href="mailto:<?php echo $email;?>"><?php echo $email;?></a>
-	</div><?php }; 
+	</div><?php  }
 if(!empty($phone)){?>
       <div class="person-card__contact-details">
         <p class="person-card__contact-label">Phone</p>
-	<a href="tel:+1<?php echo $phone?>"><?php echo $phone;?></a>
+	<a href="tel:+1<?php echo $phone;?>"><?php echo $phone;?></a>
 	</div><?php }; 
 	if(!empty($office_location)){?>
       <div class="person-card__contact-details">
         <p class="person-card__contact-label">Office</p>
 	<p><?php echo $office_location;?></p>
-	</div><?php };?>
+	</div><?php };
+if (!empty($url)){?>
       <div class="person-card__contact-details">
-        <p class="person-card__contact-label">Mail</p>
-        <p>410 Charles E. Young Drive East,<br />Los Angeles, CA 90024</p>
-      </div>
-    </div>
+        <p class="person-card__contact-label">Website</p>
+	<a href="<?php echo $url;?>"><?php echo $url;?></a>
+	</div><?php };?>
+    </div>   
+ </div>
 </div></article>
 </div><?php
 }
