@@ -65,12 +65,11 @@ if (!empty($url)){?>
 	</div><?php };?>
     </div>   
  </div>
-</div></article>
+</article>
 </div><?php
 }
-echo '</div>';
 ?>
-</div>
+</div></div>
 <!--END -->
 
 
