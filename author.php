@@ -19,7 +19,7 @@ float:right;
     </header>
 <hr/>
 
-     <div class="ucla campus contain-story">
+     <div class="ucla campus">
 <?php $user_data = get_userdata($author_id);?>
       <section class= "story"><div class= "profile-page">
 <div class= "story__featured">
