@@ -19,9 +19,9 @@ float:right;
     </header>
 <hr/>
 
-     <div class="ucla campus">
+     <div class="ucla campus contain-story">
 <?php $user_data = get_userdata($author_id);?>
-      <section class= "story">
+      <section class= "story"><div class= "profile-page">
 <div class= "story__featured">
 <article class="story__featured-card"  >
 <a href="#" tabindex="-1">
@@ -37,9 +37,35 @@ float:right;
                 echo $wp_roles->roles[ $role ]['name'] . ' ';}
 
                 };?></button>
-      </div>
+     
+<?php
+$email = get_the_author_meta('email',$author_id);
+$url = get_the_author_meta('user_url',$author_id);
+$phone = get_the_author_meta('phone-number',$author_id);
+$office_location = get_the_author_meta('office-location',$author_id);
+if ($email or  $url or $phone or $office_location): ?>
+<br> <br> <br>
+<div class="person-card__contact">
+<?php $check = get_the_author_meta('display_email_checkbox',$author_id);
+if ($check) {?>
+<p><b>Email: </b><?php echo $email?>
+<br><br><?php } if($url){?>
+<b>Website: </b>
+<?php echo $url; ?>
+<br><br><?php } if($phone){?>
+<b>Phone Number: </b>
+<?php echo $phone;?>
+<br><br><?php } if($office_location){?>
+<b>Office Location: </b>
+<?php echo $office_location;?>
+<br></p>
+<?php } endif;?><br><br>
+</div>
+
+
+ </div>
     </article>
-  </div> 
+  </div> </div></section>
 
 </div>
 <br><br><br><br><br><br>

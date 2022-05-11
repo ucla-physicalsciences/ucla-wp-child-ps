@@ -1,0 +1,15 @@
+@media(min-width:1024px){
+.profile-page .story__featured .story__featured-card .story__featured-image{
+width:50%;
+}
+
+.profile-page .story__featured .story__featured-card .story__featured-content{
+width:50%;
+transform: translateY(50%);
+}}
+
+@media(max-width:1024px){
+	.profile-page .story__featured .story__featured-card .story__featured-content{
+		margin: 0 0px;
+		
+}}

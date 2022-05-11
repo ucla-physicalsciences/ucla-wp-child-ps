@@ -9,7 +9,7 @@
 	grid-auto-rows: 500px;
 }
 
-@media(max-width: 1800px){
+@media(max-width: 1200px){
 		.role-listing-container{
 			grid-template-columns: repeat(2,auto);
 

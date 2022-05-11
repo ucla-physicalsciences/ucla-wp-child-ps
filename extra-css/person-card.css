@@ -1,3 +1,8 @@
 .person-card__contact-details a {
 	text-decoration : none;
 }
+
+@media (min-width:1080){
+.ucla.campus.contain-story{
+margin-bottom: 100px;
+}}
