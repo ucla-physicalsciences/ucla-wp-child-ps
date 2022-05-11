@@ -48,13 +48,13 @@ if ($email or  $url or $phone or $office_location): ?>
 <div class="person-card__contact">
 <?php $check = get_the_author_meta('display_email_checkbox',$author_id);
 if ($check) {?>
-<p><b>Email: </b><?php echo $email?>
+<p><b>Email: </b><a href="mailto:<?php echo $email;?>"><?php echo $email;?></a>
 <br><br><?php } if($url){?>
 <b>Website: </b>
-<?php echo $url; ?>
+<a href="<?php echo $url;?>"><?php echo $url;?></a>
 <br><br><?php } if($phone){?>
 <b>Phone Number: </b>
-<?php echo $phone;?>
+<a href="tel:+1<?php echo $phone;?>"><?php echo $phone;?></a>
 <br><br><?php } if($office_location){?>
 <b>Office Location: </b>
 <?php echo $office_location;?>
@@ -178,31 +178,6 @@ endwhile;
 endif;?>
 <br>  <br>
 
-</div>
-<div class="col span_2_of_12">
-
-<?php
-$email = get_the_author_meta('email',$author_id);
-$url = get_the_author_meta('user_url',$author_id);
-$phone = get_the_author_meta('phone-number',$author_id);
-$office_location = get_the_author_meta('office-location',$author_id);
-if ($email or  $url or $phone or $office_location): ?>
-<h2 class="yellow-side-header">Contacts</h2>
-<div class="person-card__contact">
-<?php $check = get_the_author_meta('display_email_checkbox',$author_id);
-if ($check) {?>
-<p><b>Email: </b><?php echo $email?>
-<br><br><?php }?>
-<b>Website: </b>
-<?php echo $url; ?>
-<br><br>
-<b>Phone Number: </b>
-<?php echo $phone;?>
-<br><br>
-<b>Office Location: </b>
-<?php echo $office_location;?>
-<br></p>
-<?php endif;?><br><br>
 </div></div>
 </main>
 

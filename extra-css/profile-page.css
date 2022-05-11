@@ -13,3 +13,6 @@ transform: translateY(50%);
 		margin: 0 0px;
 		
 }}
+.story__featured-content a{
+text-decoration:none;
+}
