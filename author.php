@@ -12,10 +12,8 @@ float:right;
       <div class="ucla campus">
 	<div class="col span_12_of_12">    
 <br>
-    <h2><?php $author_id = intval( get_query_var( 'author' ) ); echo get_the_author_meta( 'display_name', $author_id ); ?></h2>
-  <br>
-  <h4> <?php echo get_the_author_meta('description', $author_id);?>
- </div> </div>
+<?php $author_id = intval( get_query_var( 'author' ) );?>
+    <h2 class="yellow-side-header">Department Directory</h2> </div> </div>
     </header>
 <hr/>
 
